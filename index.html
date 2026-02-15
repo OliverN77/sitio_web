@@ -6,58 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="icon" href="img/hashnode-brands-solid-full.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <header class="header__header">
-        <div class="header__content">
-            <a href="">
-                <i class="fa-brands fa-hashnode"></i>
-            </a>
-            <span></span>
-            <h1>OliverNieto ⚡️</h1>
-        </div>
-        <nav class="header__nav">
-            <ul>
-                <li><a href="#">about</a></li>
-                <li><a href="#">sponsor</a></li>
-            </ul>
-        </nav>
-        <div class="header__actions">
-            <a href="#">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-            <div class="header__ui">
-                <button class="ui__toggle">
-                    <i class="fa-regular fa-moon"></i>
-                </button>
-                <ul class="ui__menu">
-                    <li>
-                        <i class="fa-regular fa-sun"></i>
-                        <span>Light</span>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-moon"></i>
-                        <span>Dark</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-laptop"></i>
-                        <span>System</span>
-                        <i class="fa-solid fa-check"></i>
-                    </li>
-                </ul>
+        <div class="header__wrapper">
+            <div class="header__content">
+                <a href="">
+                    <i class="fa-brands fa-hashnode"></i>
+                </a>
+                <span></span>
+                <h1>OliverNieto ⚡️</h1>
             </div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">sponsor</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <div class="header__ui">
+                    <button class="ui__toggle">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <ul class="ui__menu">
+                        <li>
+                            <i class="fa-regular fa-sun"></i>
+                            <span>Light</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-moon"></i>
+                            <span>Dark</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-laptop"></i>
+                            <span>System</span>
+                            <i class="fa-solid fa-check"></i>
+                        </li>
+                    </ul>
+                </div>
 
-            <button class="ui__newsletter">
-                <i class="fa-regular fa-envelope"></i>
-                <span>Subscribe</span>
-            </button>
-            <button class="ui__write">
-                <i class="fa-solid fa-pen"></i>
-                <span>Write</span>
-            </button>
+                <button class="ui__newsletter">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Subscribe</span>
+                </button>
+                <button class="ui__write">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Write</span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -90,7 +95,7 @@
 
                 <div class="posts-grid__card">
                     <img src="img/nt3.webp" alt="card3">
-                    <div class="posts-grid__main">
+                    <div class="posts-grid__content">
                         <h3>BenQ Screenbar Monitor Lights Review: Standard vs Plus vs a generic brand</h3>
                         <p>How does the standard BenQ Screenbar compare to its Plus version? And are they worth it over
                             a
@@ -131,35 +136,51 @@
             </div>
         </section>
 
-        <section>
-            <div class="posts-grid__card">
-                <i class="fa-brands fa-hashnode"></i>
-                <h3>Oliver Nieto</h3>
-                <p>Designer + Front-End Engineering Lead at a SaaS start-up. I like rainy days and think people are
-                    cool.</p>
-                <span>9 posts published</span>
-                <div class="card__links">
-                    <a href="#">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-solid fa-globe"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-brands fa-hashnode"></i>
-                    </a>
+        <section class="profile">
+            <div class="profile__container">
+
+                <div class="profile__profile">
+                    <div class="profile__header">
+                        <div class="profile__logo">
+                            <i class="fa-brands fa-hashnode"></i>
+                        </div>
+                        <div class="profile__content">
+                            <h3>Oliver Nieto ⚡️</h3>
+                            <p>Designer + Front-End Engineering Lead at a SaaS start-up. I like rainy days and think
+                                people
+                                are
+                                cool.</p>
+                            <span>9 posts published</span>
+                        </div>
+                    </div>
+                    <div class="card__links">
+                        <a href="#">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-hashnode"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="posts-grid__card">
-                <i class="fa-solid fa-envelope"></i>
-                <h3>Subscribe to the newsletter.</h3>
-                <span>Get new posts in your inbox.</span>
-                <div class="input__group">
-                    <input type="text" placeholder="you@example.com">
-                    <button type="submit">Subscribe</button>
+
+                <div class="profile__newsletter">
+                    <div class="newsletter__header">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="newsletter__group">
+                            <h3>Subscribe to the newsletter.</h3>
+                            <span>Get new posts in your inbox.</span>
+                        </div>
+                    </div>
+                    <div class="input__group">
+                        <input type="text" placeholder="you@example.com">
+                        <button type="submit">Subscribe</button>
+                    </div>
                 </div>
             </div>
         </section>
