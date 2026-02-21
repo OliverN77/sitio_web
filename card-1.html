@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Mis Proyectos - Oliver Nieto</title>
+</head>
+
+<body>
+    <header class="header__header">
+        <div class="header__wrapper">
+            <div class="header__content">
+                <a href="index.html">
+                    <i class="fa-brands fa-hashnode"></i>
+                    <span></span>
+                    <h1>OliverNieto ⚡️</h1>
+                </a>
+            </div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="about.html">acerca de</a></li>
+                    <li><a href="sponsor.html">sponsor</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <div class="header__ui">
+                    <button class="ui__toggle">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <ul class="ui__menu">
+                        <li>
+                            <i class="fa-regular fa-sun"></i>
+                            <span>Claro</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-moon"></i>
+                            <span>Oscuro</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-laptop"></i>
+                            <span>Sistema</span>
+                            <i class="fa-solid fa-check"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="ui__newsletter">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Suscribirse</span>
+                </button>
+                <button class="ui__write">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Escribir</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>3 Proyectos Prácticos que Construí para Fortalecer mis Habilidades en Desarrollo Web</h1>
+            <p>Explora tres proyectos completos que desarrollé utilizando HTML, CSS, JavaScript y APIs. Cada uno representa un desafío diferente en mi camino como desarrollador.</p>
+
+            <div class="hero__info">
+                <i class="fa-regular fa-calendar"></i><span>Publicado Febrero 20, 2026</span> <span>·</span><i
+                    class="fa-regular fa-clock"></i><span>8 min lectura</span>
+                <img src="img/card-1.webp" alt="Proyectos de desarrollo web">
+            </div>
+        </section>
+
+        <aside class="article-sidebar">
+            <nav class="article-sidebar__nav">
+                <h2 class="article-sidebar__title">EN ESTA PÁGINA</h2>
+                <ul class="article-sidebar__list">
+                    <li class="article-sidebar__item">
+                        <a href="#los-tres-proyectos" class="article-sidebar__link">Los Tres Proyectos</a>
+                    </li>
+
+                    <li class="article-sidebar__item article-sidebar__item--nested">
+                        <a href="#proyecto-1" class="article-sidebar__link">1. Tienda Online Responsiva</a>
+                        <ul class="article-sidebar__sublist">
+                            <li class="article-sidebar__item article-sidebar__item--bonus">
+                                <span class="article-sidebar__icon">⚡</span>
+                                <a href="#tecnologias-store" class="article-sidebar__link">Tecnologías Utilizadas</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="article-sidebar__item article-sidebar__item--nested">
+                        <a href="#proyecto-2" class="article-sidebar__link">2. Aplicación del Clima</a>
+                        <ul class="article-sidebar__sublist">
+                            <li class="article-sidebar__item article-sidebar__item--bonus">
+                                <span class="article-sidebar__icon">⚡</span>
+                                <a href="#aprendizajes-weather" class="article-sidebar__link">Aprendizajes Clave</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="article-sidebar__item article-sidebar__item--nested">
+                        <a href="#proyecto-3" class="article-sidebar__link">3. Calculadora de Notas</a>
+                        <ul class="article-sidebar__sublist">
+                            <li class="article-sidebar__item article-sidebar__item--bonus">
+                                <span class="article-sidebar__icon">⚡</span>
+                                <a href="#funcionalidades-calc" class="article-sidebar__link">Funcionalidades</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="article-sidebar__item">
+                        <a href="#conclusiones" class="article-sidebar__link">Conclusiones</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="article-intro">
+            <div class="article-author">
+                <img src="img/avatar.jpg" alt="Oliver Nieto" class="article-author__avatar">
+                <div class="article-author__info">
+                    <h3 class="article-author__name">Oliver ⚡💻</h3>
+                    <p class="article-author__bio">
+                        ¡Hola! Soy Oliver 👋 Un apasionado desarrollador enfocado en crear experiencias web modernas
+                        usando HTML, CSS, JavaScript, Node.js, PHP, Python y MySQL. Disfruto construyendo proyectos
+                        prácticos, aprendiendo nuevas tecnologías y compartiendo conocimiento con otros desarrolladores
+                        en su camino de aprendizaje.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="article-intro__content">
+                <p class="article-intro__paragraph article-intro__paragraph--lead">
+                    Construir proyectos reales es la mejor forma de aprender.
+                    <strong>Estos tres proyectos representan hitos importantes en mi desarrollo como programador</strong>,
+                    cada uno enfocado en resolver problemas específicos y dominar diferentes tecnologías.
+                </p>
+
+                <p class="article-intro__paragraph">
+                    A lo largo de mi aprendizaje, he descubierto que la teoría sin práctica no tiene sentido.
+                    Por eso decidí crear proyectos completos que pudiera mostrar en mi portafolio y que
+                    realmente demostraran mis habilidades.
+                </p>
+
+                <p class="article-intro__paragraph">
+                    En este artículo comparto tres proyectos que construí desde cero, los desafíos que enfrenté,
+                    las soluciones que implementé y las lecciones que aprendí en el proceso. Todos los proyectos
+                    están disponibles en mi
+                    <a href="https://github.com/OliverN77" target="_blank" class="article-intro__link">GitHub</a>
+                    para que puedas explorarlos y aprender de ellos.
+                </p>
+
+                <p class="article-intro__paragraph">
+                    Sigue leyendo y descubre cómo estos proyectos me ayudaron a mejorar mis habilidades.
+                </p>
+            </div>
+        </section>
+
+        <section class="article-section" id="los-tres-proyectos">
+            <h2 class="article-section__heading">Los Tres Proyectos</h2>
+
+            <article class="project" id="proyecto-1">
+                <h3 class="project__title">1. Tienda Online Responsiva</h3>
+
+                <div class="project__content">
+                    <p class="project__paragraph">
+                        Una tienda en línea completa y responsiva construida con <strong>HTML, CSS y JavaScript</strong>.
+                        Este proyecto me permitió practicar diseño de interfaces, manejo de carrito de compras y
+                        responsividad en diferentes dispositivos.
+                    </p>
+
+                    <p class="project__paragraph">
+                        La tienda incluye una página principal con productos, sistema de filtrado, carrito de compras
+                        funcional con localStorage, y un diseño completamente adaptable a móviles, tablets y escritorio.
+                    </p>
+
+                    <div class="project__gallery">
+                        <img src="img/design-1.jpg" alt="Tienda online vista principal" class="project__image">
+                        <img src="img/design-2.jpg" alt="Tienda online vista productos" class="project__image">
+                        <img src="img/design-3.jpg" alt="Tienda online carrito" class="project__image">
+                        <img src="img/design-4.jpg" alt="Tienda online responsive" class="project__image">
+                    </div>
+
+                    <p class="project__paragraph">
+                        El mayor desafío fue implementar la funcionalidad del carrito de compras que persistiera
+                        incluso después de cerrar el navegador. Utilicé localStorage para almacenar los datos
+                        y JavaScript para manejar todas las operaciones de agregar, eliminar y actualizar cantidades.
+                    </p>
+
+                    <p class="project__paragraph">
+                        Este proyecto me ayudó a entender mejor la manipulación del DOM, eventos de JavaScript
+                        y cómo estructurar código JavaScript de manera organizada y mantenible.
+                    </p>
+
+                    <!-- Tecnologías -->
+                    <div class="project__bonus" id="tecnologias-store">
+                        <h4 class="project__bonus-title">⚡ Tecnologías Utilizadas</h4>
+                        <ul class="project__list">
+                            <li class="project__list-item">HTML5 semántico</li>
+                            <li class="project__list-item">CSS3 con Flexbox y Grid</li>
+                            <li class="project__list-item">JavaScript ES6+</li>
+                            <li class="project__list-item">LocalStorage API</li>
+                            <li class="project__list-item">Diseño Mobile-First</li>
+                        </ul>
+                    </div>
+
+                    <p class="project__paragraph">
+                        Una de las mejores decisiones fue trabajar con un enfoque <strong>mobile-first</strong>.
+                        Comencé diseñando para móviles y luego escalé a pantallas más grandes, lo que hizo
+                        que el CSS fuera más limpio y fácil de mantener.
+                    </p>
+
+                    <p class="project__paragraph">
+                        También implementé un sistema de notificaciones cuando se agregan productos al carrito,
+                        transiciones suaves entre secciones y feedback visual en todos los botones interactivos.
+                    </p>
+
+                    <p class="project__paragraph">
+                        <a href="https://github.com/OliverN77/store" target="_blank" class="project__link project__link--external">
+                            <i class="fa-solid fa-link"></i>
+                            Ver proyecto completo en GitHub
+                        </a>.
+                    </p>
+                </div>
+            </article>
+
+            <article class="project" id="proyecto-2">
+                <h3 class="project__title">2. Aplicación del Clima</h3>
+
+                <div class="project__content">
+                    <p class="project__paragraph">
+                        Una aplicación del clima interactiva que utiliza la <strong>API de OpenWeatherMap</strong>
+                        para mostrar información meteorológica en tiempo real. Este proyecto me permitió practicar
+                        el consumo de APIs, manejo de datos asíncronos y creación de interfaces dinámicas.
+                    </p>
+
+                    <p class="project__paragraph">
+                        La aplicación permite a los usuarios buscar el clima de cualquier ciudad del mundo,
+                        mostrando temperatura actual, descripción del clima, humedad, velocidad del viento
+                        y un ícono representativo de las condiciones meteorológicas.
+                    </p>
+
+                    <h4 class="project__subtitle">Características Principales</h4>
+
+                    <div class="project__demo">
+                        <img src="img/js-quiz-game.jpg" alt="Weather App interfaz" class="project__demo-image">
+                    </div>
+
+                    <p class="project__paragraph">
+                        <a href="https://github.com/OliverN77/wheater-app" target="_blank" class="project__link project__link--external">
+                            <i class="fa-solid fa-link"></i>
+                            Ver Weather App en GitHub
+                        </a>
+                        — Este proyecto me enseñó a trabajar con APIs REST, promesas y async/await.
+                    </p>
+
+                    <p class="project__paragraph">
+                        El mayor desafío fue manejar los diferentes estados de la aplicación: cargando,
+                        éxito, error cuando la ciudad no existe, y problemas de conexión. Implementé
+                        mensajes de error claros y loaders para mejorar la experiencia del usuario.
+                    </p>
+
+                    <p class="project__paragraph">
+                        También aprendí sobre seguridad de APIs. Inicialmente tenía mi API key directamente
+                        en el código, pero después investigué sobre variables de entorno y mejores prácticas
+                        para proteger información sensible.
+                    </p>
+
+                    <p class="project__paragraph">
+                        Aquí un ejemplo de cómo estructuré el código para obtener los datos:
+                    </p>
+
+                    <!-- Código de ejemplo -->
+                    <div class="project__code-block">
+                        <pre class="code-block__content"><code>/* Estructura de la petición:
+1. Usuario ingresa nombre de ciudad
+2. Validar que el campo no esté vacío
+3. Mostrar loader mientras se obtienen datos
+4. Hacer petición fetch() a la API
+5. Manejar respuesta con async/await
+6. Si hay error → mostrar mensaje
+7. Si es exitoso → actualizar interfaz con datos
+8. Mostrar temperatura, descripción e ícono
+*/</code></pre>
+                    </div>
+
+                    <!-- Aprendizajes -->
+                    <div class="project__bonus" id="aprendizajes-weather">
+                        <h4 class="project__bonus-title">⚡ Aprendizajes Clave</h4>
+                        <ul class="project__list">
+                            <li class="project__list-item">Consumo de APIs REST con Fetch</li>
+                            <li class="project__list-item">Manejo de Promesas y async/await</li>
+                            <li class="project__list-item">Gestión de estados (loading, error, success)</li>
+                            <li class="project__list-item">Validación de datos del usuario</li>
+                            <li class="project__list-item">Manejo de errores y feedback visual</li>
+                        </ul>
+                    </div>
+
+                    <p class="project__paragraph">
+                        Este proyecto fue un gran paso en mi comprensión de JavaScript asíncrono y me
+                        preparó para trabajar con APIs más complejas en proyectos futuros.
+                    </p>
+                </div>
+            </article>
+
+            <article class="project" id="proyecto-3">
+                <h3 class="project__title">3. Calculadora de Notas Académicas</h3>
+
+                <div class="project__content">
+                    <p class="project__paragraph">
+                        Una aplicación web práctica para calcular promedios de notas y determinar si un estudiante
+                        aprueba o reprueba. Construida con <strong>HTML, CSS y JavaScript</strong>, este proyecto
+                        me ayudó a practicar lógica de programación y validación de datos.
+                    </p>
+
+                    <p class="project__paragraph">
+                        La calculadora permite ingresar múltiples notas, calcula automáticamente el promedio,
+                        determina el estado (aprobado/reprobado) según un umbral definido, y muestra los
+                        resultados de manera clara y visual.
+                    </p>
+
+                    <h4 class="project__subtitle">Interfaz y Funcionalidad</h4>
+
+                    <div class="project__demo">
+                        <img src="img/todo-react-app.jpg" alt="Calculadora de notas" class="project__demo-image">
+                    </div>
+
+                    <p class="project__paragraph">
+                        <a href="https://github.com/OliverN77/calculadora-nota" target="_blank" class="project__link project__link--external">
+                            <i class="fa-solid fa-link"></i>
+                            Ver Calculadora de Notas en GitHub
+                        </a>
+                        — Este proyecto me permitió practicar operaciones matemáticas y validaciones en JavaScript.
+                    </p>
+
+                    <p class="project__paragraph">
+                        Lo interesante de este proyecto fue implementar validaciones robustas. Tuve que asegurarme
+                        de que los usuarios solo pudieran ingresar números válidos, manejar casos como campos vacíos,
+                        y prevenir errores de división por cero.
+                    </p>
+
+                    <!-- Funcionalidades -->
+                    <div class="project__bonus" id="funcionalidades-calc">
+                        <h4 class="project__bonus-title">⚡ Funcionalidades Principales</h4>
+                        <ul class="project__list">
+                            <li class="project__list-item">Agregar múltiples notas dinámicamente</li>
+                            <li class="project__list-item">Validación de datos numéricos</li>
+                            <li class="project__list-item">Cálculo automático de promedio</li>
+                            <li class="project__list-item">Determinación de estado (aprobado/reprobado)</li>
+                            <li class="project__list-item">Eliminar notas individuales</li>
+                            <li class="project__list-item">Reiniciar calculadora</li>
+                            <li class="project__list-item">Feedback visual con colores</li>
+                        </ul>
+                    </div>
+
+                    <p class="project__paragraph">
+                        Una característica que agregué fue el cambio de color del resultado según el estado:
+                        verde para aprobado y rojo para reprobado. Estos pequeños detalles visuales mejoran
+                        significativamente la experiencia del usuario.
+                    </p>
+
+                    <p class="project__paragraph">
+                        También implementé la capacidad de agregar y eliminar notas de forma dinámica,
+                        lo que implicó trabajar con arrays, métodos como push(), splice() y map(),
+                        y actualizar el DOM en tiempo real.
+                    </p>
+
+                    <p class="project__paragraph">
+                        Este proyecto, aunque simple en su concepto, me ayudó a entender mejor cómo
+                        estructurar aplicaciones interactivas y manejar el flujo de datos entre la
+                        interfaz y la lógica de JavaScript.
+                    </p>
+
+                    <!-- Tweet Style Tip -->
+                    <div class="project__embed">
+                        <div class="tweet">
+                            <div class="tweet__header">
+                                <img src="img/avatar.jpg" alt="Oliver" class="tweet__avatar">
+                                <div class="tweet__user">
+                                    <span class="tweet__name">Oliver 💻🚀</span>
+                                    <span class="tweet__handle">@oliverdev</span>
+                                    <span class="tweet__separator">·</span>
+                                    <span class="tweet__badge">Consejo</span>
+                                </div>
+                            </div>
+                            <div class="tweet__content">
+                                <p class="tweet__text">
+                                    🚀 #TipDesarrollo
+                                </p>
+                                <p class="tweet__text">
+                                    Cuando construyas proyectos, siempre piensa en la experiencia del usuario.
+                                </p>
+                                <p class="tweet__text">
+                                    Validaciones, mensajes de error claros y feedback visual hacen la diferencia
+                                    entre un proyecto amateur y uno profesional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Conclusiones Section -->
+        <section class="article-summary" id="conclusiones">
+            <h2 class="article-summary__heading">Conclusiones</h2>
+
+            <div class="article-summary__content">
+                <p class="article-summary__paragraph">
+                    Hoy conociste tres proyectos reales que construí para fortalecer mis habilidades
+                    como desarrollador web. Cada uno representa un desafío diferente y utiliza
+                    tecnologías fundamentales:
+                </p>
+
+                <ol class="article-summary__list">
+                    <li class="article-summary__item">Tienda Online - Diseño responsivo y manejo de estado con localStorage</li>
+                    <li class="article-summary__item">Weather App - Consumo de APIs y manejo de datos asíncronos</li>
+                    <li class="article-summary__item">Calculadora de Notas - Lógica de programación y validaciones</li>
+                </ol>
+
+                <p class="article-summary__paragraph">
+                    Si construyes estos proyectos (o tus propias versiones), saldrás del proceso con un
+                    conocimiento sólido de HTML, CSS, JavaScript, APIs REST, manejo de datos asíncronos
+                    y buenas prácticas de desarrollo front-end.
+                </p>
+
+                <p class="article-summary__paragraph">
+                    Si parece abrumador, no te estreses. Todos comenzamos desde cero. Toma un proyecto
+                    a la vez, resuelve un problema a la vez, y verás cómo todo empieza a tener sentido.
+                    Como dicen, <strong>¡el mejor momento para empezar es ahora!</strong>
+                </p>
+
+                <p class="article-summary__paragraph">
+                    Todos estos proyectos están disponibles en mi
+                    <a href="https://github.com/OliverN77" target="_blank" class="article-summary__link">GitHub</a>
+                    para que puedas explorar el código, aprender de él y adaptarlo a tus propias ideas.
+                    Siéntete libre de hacer preguntas o compartir tus comentarios. ¡Buena suerte y diviértete programando! 💪
+                </p>
+
+                <p class="article-summary__paragraph article-summary__paragraph--social">
+                    <em>¿Quieres conectar?
+                        <a href="https://github.com/OliverN77" target="_blank" class="article-summary__link">Sígueme en GitHub</a>
+                        donde comparto proyectos, código y mi progreso como desarrollador!</em>
+                </p>
+
+                <!-- Tags -->
+                <div class="article-summary__tags">
+                    <a href="#" class="tag">#desarrollo-web</a>
+                    <a href="#" class="tag">#javascript</a>
+                    <a href="#" class="tag">#proyectos</a>
+                    <a href="#" class="tag">#portafolio</a>
+                    <a href="#" class="tag">#frontend</a>
+                </div>
+
+                <!-- Views -->
+                <div class="article-summary__views">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>1.2K vistas</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-articles">
+            <h2 class="related-articles__heading">Más contenido de este blog</h2>
+
+            <div class="related-articles__grid">
+                <article class="article-card">
+                    <div class="article-card__content">
+                        <h3 class="article-card__title">
+                            <a href="#" class="article-card__link">
+                                10 Lecciones para Sobresalir en tu Carrera como Desarrollador
+                            </a>
+                        </h3>
+                        <p class="article-card__excerpt">
+                            Cómo prepararte para una carrera sostenible en ingeniería de software
+                            — lecciones que me han servido muy bien hasta ahora.
+                        </p>
+                        <div class="article-card__meta">
+                            <span class="article-card__date">15 Feb, 2026</span>
+                            <span class="article-card__separator">·</span>
+                            <span class="article-card__reading-time">12 min lectura</span>
+                            <span class="article-card__separator">·</span>
+                            <span class="article-card__views">890</span>
+                        </div>
+                    </div>
+                    <div class="article-card__image-wrapper">
+                        <img src="img/article-stairs.jpg" alt="10 Lecciones para Sobresalir"
+                            class="article-card__image">
+                    </div>
+                </article>
+
+                <!-- Article Card 2 -->
+                <article class="article-card">
+                    <div class="article-card__content">
+                        <h3 class="article-card__title">
+                            <a href="#" class="article-card__link">
+                                Cómo el Pair-Programming Mejoró mis Habilidades de Desarrollo
+                            </a>
+                        </h3>
+                        <p class="article-card__excerpt">
+                            Llevo varios meses practicando pair-programming de forma consistente.
+                            Aunque no empezó sin problemas, definitivamente ha sido una valiosa
+                            adición a mi proceso...
+                        </p>
+                        <div class="article-card__meta">
+                            <span class="article-card__date">10 Feb, 2026</span>
+                            <span class="article-card__separator">·</span>
+                            <span class="article-card__reading-time">7 min lectura</span>
+                            <span class="article-card__separator">·</span>
+                            <span class="article-card__views">654</span>
+                        </div>
+                    </div>
+                    <div class="article-card__image-wrapper">
+                        <img src="img/article-teapot.jpg" alt="Pair-Programming" class="article-card__image">
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-card__content">
+                        <h3 class="article-card__title">
+                            <a href="#" class="article-card__link">
+                                Las Mejores Herramientas para Desarrolladores en 2026
+                            </a>
+                        </h3>
+                        <p class="article-card__excerpt">
+                            Una guía completa de las herramientas y extensiones que uso
+                            diariamente para ser más productivo como desarrollador.
+                        </p>
+                        <div class="article-card__meta">
+                            <span class="article-card__date">18 Feb, 2026</span>
+                            <span class="article-card__separator">·</span>
+                            <span class="article-card__reading-time">9 min lectura</span>
+                            <span class="article-card__separator">·</span>
+                            <span class="article-card__views">1.1K</span>
+                        </div>
+                    </div>
+                    <div class="article-card__image-wrapper">
+                        <img src="img/article-monitor.jpg" alt="Herramientas para Desarrolladores" class="article-card__image">
+                    </div>
+                </article>
+
+                <div class="newsletter-card">
+                    <div class="newsletter-card__icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="newsletter-card__content">
+                        <h3 class="newsletter-card__title">Suscríbete al newsletter</h3>
+                        <p class="newsletter-card__description">Recibe nuevos artículos directamente en tu bandeja de entrada.</p>
+                        <form class="newsletter-card__form">
+                            <input type="email" placeholder="tu@ejemplo.com" class="newsletter-card__input" required>
+                            <button type="submit" class="newsletter-card__button">Suscribirse</button>
+                        </form>
+                    </div>
+                </div>
+
+                <article class="article-card">
+                    <div class="article-card__content">
+                        <h3 class="article-card__title">
+                            <a href="#" class="article-card__link">
+                                Mi Camino desde Cero hasta Desarrollador Web
+                            </a>
+                        </h3>
+                        <p class="article-card__excerpt">
+                            La historia de cómo empecé a programar sin conocimientos previos
+                            y los recursos que me ayudaron a conseguir mis primeros proyectos.
+                        </p>
+                        <div class="article-card__meta">
+                            <span class="article-card__date">5 Feb, 2026</span>
+                            <span class="article-card__separator">·</span>
+                            <span class="article-card__reading-time">14 min lectura</span>
+                            <span class="article-card__separator">·</span>
+                            <span class="article-card__views">2.3K</span>
+                        </div>
+                    </div>
+                    <div class="article-card__image-wrapper">
+                        <img src="img/article-laptop.jpg" alt="Mi Camino como Desarrollador" class="article-card__image">
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="profile__profile">
+            <div class="profile__header">
+                <div class="profile__logo">
+                    <i class="fa-brands fa-hashnode"></i>
+                </div>
+                <div class="profile__content">
+                    <h3>Oliver Nieto ⚡️</h3>
+                    <p>Desarrollador web apasionado enfocado en crear experiencias modernas usando HTML, CSS, JavaScript,
+                        Node.js, PHP, Python y MySQL. Comparto mi aprendizaje y proyectos.</p>
+                    <span>3 proyectos publicados</span>
+                </div>
+            </div>
+            <div class="card__links">
+                <a href="https://github.com/OliverN77" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-globe"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-hashnode"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Oliver Nieto. ⚡️</p>
+        <nav>
+            <ul>
+                <a href="#">
+                    Archivo
+                </a>
+                <a href="https://hashnode.com/@privacy">
+                    Privacidad
+                </a>
+                <a href="https://hashnode.com/terms">
+                    Términos
+                </a>
+            </ul>
+        </nav>
+        <div class="footer__content">
+            <a href="https://blog.anniebombanie.com/sitemap.xml"><i class="fa-solid fa-sitemap"></i>Sitemap</a>
+            <a href="https://blog.anniebombanie.com/rss.xml"><i class="fa-solid fa-rss"></i>RSS</a>
+        </div>
+        <div class="hasnode__link">
+            <a href="https://hashnode.com/@olivernieto" target="_blank">
+                <i class="fa-brands fa-hashnode"></i>
+                <span>OliverNieto</span>
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -323,6 +323,11 @@ main {
     object-fit: cover;
 }
 
+.posts__grid__card:nth-child(3) p {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
 /* Seleccionar todos los .posts__grid__card excepto el tercero */
 
 .posts__grid__card:not(:nth-child(3)) {
