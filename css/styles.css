@@ -889,6 +889,10 @@ main {
     margin-bottom: 1.2rem;
 }
 
+.posts__grid__container>.posts__grid__card:nth-of-type(3) .card__info {
+    padding-top: 3.5rem;
+}
+
 .card__info {
     align-items: center;
     color: #a7abb1;
