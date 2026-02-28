@@ -2,280 +2,338 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oliver Nieto ⚡️</title>
-  <link rel="icon" href="img/hashnode-brands-solid-full.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Nieto ⚡️</title>
+    <link rel="icon" href="img/hashnode-brands-solid-full.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <header class="header__header">
-    <div class="header__wrapper">
-      <div class="header__content">
-        <a
-          href="https://hashnode.com/?utm_source=https%3A%2F%2Fblog.anniebombanie.com&utm_medium=referral&utm_campaign=blog_header_logo&utm_content=logo">
-          <i class="fa-brands fa-hashnode"></i>
-        </a>
-        <span></span>
-        <a href="index.html" class="header__h1__link">
-          <h1>OliverNieto ⚡️</h1>
-        </a>
-      </div>
-      <nav class="header__nav">
-        <ul>
-          <li><a href="about.html">acerca de</a></li>
-          <li><a href="sponsor.html">sponsor</a></li>
-        </ul>
-      </nav>
-      <div class="header__actions">
-        <a href="#">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </a>
-        <div class="header__ui">
-          <button class="ui__toggle">
-            <i class="fa-regular fa-moon"></i>
-          </button>
-          <ul class="ui__menu">
-            <li>
-              <i class="fa-regular fa-sun"></i>
-              <span>Claro</span>
-            </li>
-            <li>
-              <i class="fa-regular fa-moon"></i>
-              <span>Oscuro</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-laptop"></i>
-              <span>Sistema</span>
-              <i class="fa-solid fa-check"></i>
-            </li>
-          </ul>
-        </div>
+    <header class="header__header">
+        <div class="header__wrapper">
+            <div class="header__content">
+                <a href="https://hashnode.com/?utm_source=https%3A%2F%2Fblog.anniebombanie.com&utm_medium=referral&utm_campaign=blog_header_logo&utm_content=logo"
+                    target="_blank">
+                    <i class="fa-brands fa-hashnode"></i>
+                </a>
+                <span></span>
+                <a href="index.html" class="header__h1__link">
+                    <h1>OliverNieto ⚡️</h1>
+                </a>
+            </div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="about.html">acerca de</a></li>
+                    <li><a href="sponsor.html">sponsor</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <div class="header__ui">
+                    <button class="ui__toggle">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <ul class="ui__menu">
+                        <li>
+                            <i class="fa-regular fa-sun"></i>
+                            <span>Claro</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-moon"></i>
+                            <span>Oscuro</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-laptop"></i>
+                            <span>Sistema</span>
+                            <i class="fa-solid fa-check"></i>
+                        </li>
+                    </ul>
+                </div>
 
-        <button class="ui__newsletter">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Suscribirse</span>
-        </button>
-        <button class="ui__write">
-          <i class="fa-solid fa-pen"></i>
-          <span>Escribir</span>
-        </button>
-      </div>
+                <button class="ui__newsletter">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Suscribirse</span>
+                </button>
+                <button onclick="window.open('https://hashnode.com/create/story', '_blank');" class="ui__write">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Escribir</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal de busqueda -->
+    <div id="searchModal" class="modal__search">
+        <div class="modal__search__dialog">
+            <div class="modal__search__header">
+                <span class="modal__search__icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="modal__search__input" placeholder="Search posts" autofocus />
+                <span class="modal__search__shortcut">Ctrl + K</span>
+                <button class="modal__search__close" aria-label="Cerrar"><i
+                        class="fa-regular fa-circle-xmark"></i></button>
+            </div>
+            <div class="modal__search__body">
+            </div>
+        </div>
     </div>
-  </header>
 
-  <main>
-    <section class="posts__grid">
-      <div class="posts__grid__container">
-        <div class="posts__grid__card">
-          <a href="card-1.html">
-            <img src="img/card-1.webp" alt="card1">
-            <h3>3 Proyectos Prácticos que Construí para Fortalecer mis Habilidades en Desarrollo Web</h3>
-            <div class="card__info">
-              <span>Feb 20, 2026</span>
-              <i class="fa-regular fa-clock"></i>
-              <span>8 min lectura</span>
-              <i class="fa-solid fa-chart-bar"></i>
-              <span>1.2K</span>
+    <!-- Modal flotante de newsletter -->
+    <div id="newsletterModal" class="modal__newsletter">
+        <div class="modal__newsletter__dialog">
+            <div class="modal__newsletter__header">
+                <div class="modal__newsletter__text">
+                    <div class="modal__newsletter__title">Subscribe to newsletter</div>
+                    <div class="modal__newsletter__desc">Get new posts in your inbox.</div>
+                </div>
+                <div class="modal__newsletter__icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
             </div>
-          </a>
+            <form class="modal__newsletter__form">
+                <input type="email" class="modal__newsletter__input" placeholder="you@example.com" />
+                <button type="submit" class="modal__newsletter__submit">Subscribe</button>
+            </form>
         </div>
-
-        <div class="posts__grid__card">
-          <a href="#">
-            <img src="img/card-3.webp" alt="card3">
-            <h3>Las Mejores Herramientas para Desarrolladores en 2026</h3>
-            <div class="card__info">
-              <span>Feb 18, 2026</span>
-              <i class="fa-regular fa-clock"></i>
-              <span>9 min lectura</span>
-              <i class="fa-solid fa-chart-bar"></i>
-              <span>1.1K</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="posts__grid__card">
-          <a href="card-2.html">
-            <img src="img/card-4.webp" alt="card4">
-            <h3>10 Lecciones que Me Ayudaron a Crecer en Mi Carrera como Desarrollador</h3>
-            <p>Cómo construir una carrera sostenible en desarrollo — lecciones que me han servido bien hasta ahora.</p>
-            <div class="card__info">
-              <span>Feb 20, 2026</span>
-              <i class="fa-regular fa-clock"></i>
-              <span>16 min lectura</span>
-              <i class="fa-solid fa-chart-bar"></i>
-              <span>2.9K</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="posts__grid__card">
-          <a href="#">
-            <img src="img/card-2.webp" alt="card2">
-            <h3>Cómo el Pair-Programming Mejoró mis Habilidades de Desarrollo</h3>
-            <div class="card__info">
-              <span>Feb 10, 2026</span>
-              <i class="fa-regular fa-clock"></i>
-              <span>7 min lectura</span>
-              <i class="fa-solid fa-chart-bar"></i>
-              <span>654</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="posts__grid__card">
-          <a href="#">
-            <img src="img/card-5.webp" alt="card5">
-            <h3>Mi Camino desde Cero hasta Desarrollador Web</h3>
-            <div class="card__info">
-              <span>Feb 5, 2026</span>
-              <i class="fa-regular fa-clock"></i>
-              <span>14 min lectura</span>
-              <i class="fa-solid fa-chart-bar"></i>
-              <span>2.3K</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="profile">
-      <div class="profile__container">
-
-        <div class="profile__profile">
-          <div class="profile__header">
-            <div class="profile__logo">
-              <i class="fa-brands fa-hashnode"></i>
-            </div>
-            <div class="profile__content">
-              <h3>Oliver Nieto ⚡️</h3>
-              <p>Técnico en Programación de Software enfocado en desarrollo web. Nivel considerable en HTML, CSS y PHP.
-                Aprendiendo Node.js, JavaScript, Python y SQL. Objetivo: nivel B1 de inglés e Ingeniería en Sistemas.
-              </p>
-              <span>9 artículos publicados</span>
-            </div>
-          </div>
-          <div class="card__links">
-            <a href="#">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://github.com/OliverN77" target="_blank">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#">
-              <i class="fa-solid fa-globe"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-hashnode"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="profile__newsletter">
-          <div class="newsletter__header">
-            <i class="fa-solid fa-envelope"></i>
-            <div class="newsletter__group">
-              <h3>Suscríbete al newsletter.</h3>
-              <span>Recibe nuevos artículos en tu bandeja de entrada.</span>
-            </div>
-          </div>
-          <div class="input__group">
-            <input type="text" placeholder="tu@ejemplo.com">
-            <button type="submit">Suscribirse</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="posts__list">
-      <div class="post__list__card">
-        <a href="#">
-          <img src="img/card-6.webp" alt="card6">
-          <h2>CSS y Animaciones: Una Colección de Recursos y Tutoriales Útiles</h2>
-          <p>Originalmente publicado como un hilo en redes sociales, quise compilar esta lista de recursos de CSS
-            y animaciones en un solo lugar para fácil referencia. He actualizado algunos de los recursos y como bono,
-            también agregué información adicional y herramientas útiles...</p>
-          <span>Feb 12, 2026</span>
-          <i class="fa-regular fa-clock"></i>
-          <span>6 min lectura</span>
-          <i class="fa-solid fa-chart-bar"></i>
-          <span>960</span>
-        </a>
-      </div>
-
-      <div class="post__list__card">
-        <a href="#">
-          <img src="img/card-7.webp" alt="card7">
-          <h2>Reflexiones Sobre el Aprendizaje Continuo en Desarrollo</h2>
-          <p>Reflexiones personales sobre el proceso de aprendizaje, la importancia de la práctica constante
-            y el trabajo hacia un futuro mejor como desarrollador...</p>
-          <span>Feb 8, 2026</span>
-          <i class="fa-regular fa-clock"></i>
-          <span>7 min lectura</span>
-          <i class="fa-solid fa-chart-bar"></i>
-          <span>209</span>
-        </a>
-      </div>
-
-      <div class="post__list__card">
-        <a href="#">
-          <img src="img/card-8.webp" alt="card8">
-          <h2>Conseguir Tu Primer Trabajo en Tecnología: Consejos de Desarrolladores Senior</h2>
-          <p>Poco después de graduarme como Técnico en Programación de Software, comencé a buscar mi primer
-            trabajo en el campo del desarrollo web...</p>
-          <span>Feb 3, 2026</span>
-          <i class="fa-regular fa-clock"></i>
-          <span>18 min lectura</span>
-          <i class="fa-solid fa-chart-bar"></i>
-          <span>2.3K</span>
-        </a>
-      </div>
-
-      <div class="post__list__card">
-        <a href="#">
-          <img src="img/card-9.webp" alt="card9">
-          <h2>Sobre Aprender a Programar y los Desafíos de Reinventarse</h2>
-          <p>Recuerdo el momento exacto en que comencé a enamorarme de la programación. Y créeme, mi antiguo yo
-            nunca lo hubiera imaginado...</p>
-          <span>Ene 28, 2026</span>
-          <i class="fa-regular fa-clock"></i>
-          <span>11 min lectura</span><i class="fa-solid fa-chart-bar"></i>
-          <span>496</span>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Oliver Nieto. ⚡️</p>
-    <nav>
-      <ul>
-        <a href="#">
-          Archivo
-        </a>
-        <a href="https://hashnode.com/@privacy">
-          Privacidad
-        </a>
-        <a href="https://hashnode.com/terms">
-          Términos
-        </a>
-      </ul>
-    </nav>
-    <div class="footer__content">
-      <a href="https://blog.anniebombanie.com/sitemap.xml"><i class="fa-solid fa-sitemap"></i>Sitemap</a>
-      <a href="https://blog.anniebombanie.com/rss.xml"><i class="fa-solid fa-rss"></i>RSS</a>
     </div>
-    <div class="hasnode__link">
-      <a href="https://hashnode.com/@olivernieto" target="_blank">
-        <i class="fa-brands fa-hashnode"></i>
-        <span>OliverNieto</span>
-      </a>
-    </div>
-  </footer>
+
+    <main>
+        <section class="posts__grid">
+            <div class="posts__grid__container">
+                <div class="posts__grid__card">
+                    <a href="card-1.html">
+                        <img src="img/card-1.webp" alt="card1">
+                        <h3>3 Proyectos Prácticos que Construí para Fortalecer mis Habilidades en Desarrollo Web</h3>
+                        <div class="card__info">
+                            <span>Feb 20, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>8 min lectura</span>
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span>1.2K</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="posts__grid__card">
+                    <a href="https://blog.anniebombanie.com/benq-screenbar-monitor-lights-review-standard-vs-plus-vs-a-generic-brand"
+                        target="_blank">
+                        <img src="img/card-3.webp" alt="card3">
+                        <h3>Las Mejores Herramientas para Desarrolladores en 2026</h3>
+                        <div class="card__info">
+                            <span>Feb 18, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>9 min lectura</span>
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span>1.1K</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="posts__grid__card">
+                    <a href="card-2.html">
+                        <img src="img/card-4.webp" alt="card4">
+                        <h3>10 Lecciones que Me Ayudaron a Crecer en Mi Carrera como Desarrollador</h3>
+                        <p>Cómo construir una carrera sostenible en desarrollo — lecciones que me han servido bien hasta
+                            ahora.</p>
+                        <div class="card__info">
+                            <span>Feb 20, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>16 min lectura</span>
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span>2.9K</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="posts__grid__card">
+                    <a href="https://blog.anniebombanie.com/why-i-turned-down-a-six-figure-salary-in-big-tech-to-stay-at-a-five-person-startup"
+                        target="_blank">
+                        <img src="img/card-2.webp" alt="card2">
+                        <h3>Cómo el Pair-Programming Mejoró mis Habilidades de Desarrollo</h3>
+                        <div class="card__info">
+                            <span>Feb 10, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>7 min lectura</span>
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span>654</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="posts__grid__card">
+                    <a href="https://blog.anniebombanie.com/how-three-months-of-pair-programming-impacted-my-developer-career"
+                        target="_blank">
+                        <img src="img/card-5.webp" alt="card5">
+                        <h3>Mi Camino desde Cero hasta Desarrollador Web</h3>
+                        <div class="card__info">
+                            <span>Feb 5, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>14 min lectura</span>
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span>2.3K</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile">
+            <div class="profile__container">
+
+                <div class="profile__profile">
+                    <div class="profile__header">
+                        <div class="profile__logo">
+                            <i class="fa-brands fa-hashnode"></i>
+                        </div>
+                        <div class="profile__content">
+                            <h3>Oliver Nieto ⚡️</h3>
+                            <p>Técnico en Programación de Software enfocado en desarrollo web. Nivel considerable en
+                                HTML, CSS y PHP.
+                                Aprendiendo Node.js, JavaScript, Python y SQL. Objetivo: nivel A1 de inglés e Ingeniería
+                                en Sistemas.
+                            </p>
+                            <span>9 artículos publicados</span>
+                        </div>
+                    </div>
+                    <div class="card__links">
+                        <a href="https://x.com/OliverN30678667" target="_blank">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://github.com/OliverN77" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://portfolio-theta-mocha-41.vercel.app/" target="_blank">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="https://hashnode.com/@olivernieto" target="_blank">
+                            <i class="fa-brands fa-hashnode"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profile__newsletter">
+                    <div class="newsletter__header">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="newsletter__group">
+                            <h3>Suscríbete al newsletter.</h3>
+                            <span>Recibe nuevos artículos en tu bandeja de entrada.</span>
+                        </div>
+                    </div>
+                    <div class="input__group">
+                        <input type="text" placeholder="tu@ejemplo.com">
+                        <button type="submit">Suscribirse</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="post__list">
+            <div class="post__list__container">
+                <div class="post__list__card">
+                    <a href="https://blog.anniebombanie.com/css-svg-art-animation-a-curated-collection-of-useful-resources-tutorials"
+                        target="_blank">
+                        <img src="img/card-6.webp" alt="card6">
+                        <h2>CSS y Animaciones: Una Colección de Recursos y Tutoriales Útiles</h2>
+                        <p>Originalmente publicado como un hilo en redes sociales, quise compilar esta lista de recursos
+                            de CSS
+                            y animaciones en un solo lugar para fácil referencia...</p>
+                        <div class="post__info">
+                            <span>Feb 12, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>6 min lectura</span>
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span>960</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="post__list__card">
+                    <a href="https://blog.anniebombanie.com/thoughts-on-the-current-state-of-the-world-june-2020"
+                        target="_blank">
+                        <img src="img/card-7.webp" alt="card7">
+                        <h2>Reflexiones Sobre el Aprendizaje Continuo en Desarrollo</h2>
+                        <p>Reflexiones personales sobre el proceso de aprendizaje, la importancia de la práctica
+                            constante
+                            y el trabajo hacia un futuro mejor como desarrollador...</p>
+                        <div class="post__info">
+                            <span>Feb 8, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>7 min lectura</span>
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span>209</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="post__list__card">
+                    <a href="https://blog.anniebombanie.com/getting-your-first-coveted-tech-job-advice-from-senior-developers-hiring-managers-industry-recruiters"
+                        target="_blank">
+                        <img src="img/card-8.webp" alt="card8">
+                        <h2>Conseguir Tu Primer Trabajo en Tecnología: Consejos de Desarrolladores Senior...</h2>
+                        <p>Poco después de graduarme como Técnico en Programación de Software, comencé a buscar mi
+                            primer
+                            trabajo en el campo del desarrollo web...</p>
+                        <div class="post__info">
+                            <span>Feb 3, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>18 min lectura</span>
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span>2.3K</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="post__list__card">
+                    <a href="https://blog.anniebombanie.com/on-being-a-designer-learning-code-and-the-challenges-of-re-inventing-yourself"
+                        target="_blank">
+                        <img src="img/card-9.webp" alt="card9">
+                        <h2>Sobre Aprender a Programar y los Desafíos de Reinventarse</h2>
+                        <p>Recuerdo el momento exacto en que comencé a enamorarme de la programación. Y créeme, mi
+                            antiguo yo
+                            nunca lo hubiera imaginado...</p>
+                        <div class="post__info">
+                            <span>Ene 28, 2026</span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>11 min lectura</span><i class="fa-solid fa-chart-bar"></i>
+                            <span>496</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p style="font-family: sans-serif;">&copy; <span style="font-family: var(--font-family);"> 2026 Oliver Nieto. ⚡️</span></p>
+        <nav>
+            <ul>
+                <a href="https://blog.anniebombanie.com/archive" target="_blank">
+                    Archivo
+                </a>
+                <a href="https://hashnode.com/@privacy" target="_blank">
+                    Privacidad
+                </a>
+                <a href="https://hashnode.com/terms" target="_blank">
+                    Términos
+                </a>
+            </ul>
+        </nav>
+        <div class="footer__content">
+            <a href="https://blog.anniebombanie.com/sitemap.xml"><i class="fa-solid fa-sitemap"></i>Sitemap</a>
+            <a href="https://blog.anniebombanie.com/rss.xml"><i class="fa-solid fa-rss"></i>RSS</a>
+        </div>
+        <div class="hashnode__link">
+            <a href="https://hashnode.com/@olivernieto" target="_blank">
+                <i class="fa-brands fa-hashnode"></i>
+                <span>hashnode</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
 
 </body>
 
