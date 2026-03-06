@@ -16,11 +16,13 @@ function openSearchModal() {
     searchModal.classList.add('active');
     searchModal.setAttribute('aria-hidden', 'false');
     setTimeout(() => searchInput && searchInput.focus(), 100);
+    document.body.style.overflow = 'hidden';
 }
 
 function closeSearchModal() {
     searchModal.classList.remove('active');
     searchModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
 }
 
 // Abrir modal al hacer click en el ícono
@@ -31,12 +33,13 @@ if (searchOpenBtn) {
     });
 }
 
-// Cerrar modal al hacer click en la X
+
+// Cerrar modal de busqueda al hacer click en la X
 if (searchCloseBtn) {
     searchCloseBtn.addEventListener('click', closeSearchModal);
 }
 
-// Cerrar modal al hacer click fuera del diálogo
+// Cerrar modal de busqueda al hacer click fuera del diálogo
 if (searchModal) {
     searchModal.addEventListener('click', (e) => {
         if (e.target === searchModal) closeSearchModal();
