@@ -189,7 +189,7 @@
 
     .ui__menu li {
         align-items: center;
-        color: #e0e0e0;
+        color: var(--text-primary-dark);
         cursor: pointer;
         display: flex;
         font-size: 1.44rem;
@@ -472,7 +472,7 @@
 
     .modal__search__shortcut {
         background: var(--bg-surface-dark);
-        border: 1px solid var(--border-dark);
+        border: 0.1rem solid var(--border-dark);
         border-radius: 0.4rem;
         color: var(--text-muted-dark);
         font-size: var(--font-size-xs);
@@ -530,7 +530,7 @@
 
     .modal__newsletter__dialog {
         background: var(--bg-page-dark);
-        border: 1px solid var(--border-dark);
+        border: 0.1rem solid var(--border-dark);
         border-radius: 1rem;
         box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.25);
         display: flex;
@@ -573,7 +573,7 @@
     .modal__newsletter__form {
         align-items: center;
         background: #181b20;
-        border: 1.5px solid #353a40;
+        border: 0.15rem solid #353a40;
         border-radius: var(--radius-lg);
         display: flex;
         gap: 0.5rem;
@@ -845,7 +845,7 @@
     }
 
     .profile__content p {
-        color: #d6d3d1;
+        color: var(--text-primary-dark);
         font-family: var(--font-family);
         font-size: var(--font-size-lg);
         line-height: 1.5;
@@ -1047,7 +1047,7 @@
     }
 
     .post__list__card p {
-        color: #d6d3d1;
+        color: var(--text-muted-dark);
         font-size: var(--font-size-md);
         font-weight: 400;
         line-height: 1.5;

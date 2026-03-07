@@ -1,7 +1,15 @@
 :root {
-    --bg-page-light: #f9fafb;      /* Fondo base de la página */
-    --bg-surface-light: #f1f3f5;   /* Fondo de tarjetas y paneles */
-    --border-light: #d1d4d9;       /* Color de bordes */
-    --text-primary-light: #16191c; /* Texto e iconos principales */
-    --text-muted-light: #6b7280;   /* Texto secundario/apagado */
+    /* Tokens propios del tema claro */
+    --bg-page-light: #f9fafb;
+    --bg-surface-light: #f1f3f5;
+    --border-light: #d1d4d9;
+    --text-primary-light: #16191c;
+    --text-muted-light: #6b7280;
+
+    /* Sobreescribe las variables semánticas que usa styles.css */
+    --bg-page-dark: var(--bg-page-light);
+    --bg-surface-dark: var(--bg-surface-light);
+    --border-dark: var(--border-light);
+    --text-primary-dark: var(--text-primary-light);
+    --text-muted-dark: var(--text-muted-light);
 }

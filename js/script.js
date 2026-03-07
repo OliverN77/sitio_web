@@ -1,17 +1,21 @@
 // Variables y referencias a elementos del DOM
-const searchModal = document.getElementById('searchModal');
-const searchOpenBtn = document.querySelector('.header__actions > a');
-const searchCloseBtn = document.querySelector('.modal__search__close');
-const searchInput = document.querySelector('.modal__search__input');
 const header = document.querySelector('.header__header');
-const newsletterModal = document.getElementById('newsletterModal');
-const newsletterOpenBtn = document.querySelector('.ui__newsletter');
 const newsletterCloseBtn = document.querySelector('.modal__newsletter__close');
 const newsletterInput = document.querySelector('.modal__newsletter__input');
+const newsletterModal = document.getElementById('newsletterModal');
+const newsletterOpenBtn = document.querySelector('.ui__newsletter');
+const searchBody = document.querySelector('.modal__search__body');
+const searchCloseBtn = document.querySelector('.modal__search__close');
+const searchInput = document.querySelector('.modal__search__input');
+const searchModal = document.getElementById('searchModal');
+const searchOpenBtn = document.querySelector('.header__actions > a');
 const sidebar = document.getElementById('sidebar');
+const sidebarClose = document.querySelector('.sidebar__close');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
 const sidebarToggle = document.querySelector('.sidebar__toggle');
-const sidebarClose = document.querySelector('.sidebar__close');
+const themeLink = document.getElementById('theme-stylesheet');
+const themeItems = document.querySelectorAll('.ui__menu li');
+const toggleIcon = document.querySelector('.ui__toggle i');
 let lastScroll = 0;
 
 // Sidebar
@@ -57,6 +61,8 @@ function closeSearchModal() {
     searchModal.classList.remove('active');
     searchModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (searchInput) searchInput.value = '';
+    if (searchBody) searchBody.innerHTML = '';
 }
 
 if (searchOpenBtn) {
@@ -91,6 +97,75 @@ window.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// Búsqueda en tiempo real
+const allCards = [...document.querySelectorAll('.posts__grid__card, .post__list__card')].map(card => {
+    const a = card.querySelector('a');
+    const titleEl = card.querySelector('h3') || card.querySelector('h2');
+    const imgEl = card.querySelector('img');
+    const dateEl = card.querySelector('.card__info span') || card.querySelector('.post__info span');
+    return {
+        title: titleEl?.textContent.trim() || '',
+        href: a?.getAttribute('href') || '#',
+        img: imgEl?.getAttribute('src') || '',
+        imgAlt: imgEl?.getAttribute('alt') || '',
+        date: dateEl?.textContent.trim() || '',
+    };
+});
+
+function renderSearchResults(query) {
+    searchBody.innerHTML = '';
+    if (!query.trim()) return;
+
+    const q = query.toLowerCase();
+    const matches = allCards.filter(card => card.title.toLowerCase().includes(q));
+
+    if (matches.length === 0) {
+        const empty = document.createElement('p');
+        empty.className = 'modal__search__empty';
+        empty.textContent = `No se encontraron resultados para "${query}"`;
+        searchBody.appendChild(empty);
+        return;
+    }
+
+    const label = document.createElement('span');
+    label.className = 'modal__search__label';
+    label.textContent = 'Search results';
+    searchBody.appendChild(label);
+
+    matches.forEach(card => {
+        const a = document.createElement('a');
+        a.className = 'modal__search__result';
+        a.href = card.href;
+
+        const info = document.createElement('div');
+        info.className = 'modal__search__result__info';
+
+        const titleEl = document.createElement('span');
+        titleEl.className = 'modal__search__result__title';
+        titleEl.textContent = card.title;
+
+        const dateEl = document.createElement('span');
+        dateEl.className = 'modal__search__result__date';
+        dateEl.textContent = card.date;
+
+        info.appendChild(titleEl);
+        info.appendChild(dateEl);
+
+        const img = document.createElement('img');
+        img.className = 'modal__search__result__img';
+        img.src = card.img;
+        img.alt = card.imgAlt;
+
+        a.appendChild(info);
+        a.appendChild(img);
+        searchBody.appendChild(a);
+    });
+}
+
+if (searchInput) {
+    searchInput.addEventListener('input', () => renderSearchResults(searchInput.value));
+}
 
 // Modal flotante de newsletter
 
@@ -145,4 +220,47 @@ window.addEventListener('scroll', () => {
 
     // Actualiza la ultima posicion del scroll
     lastScroll = currentScroll;
+});
+
+// Selector de tema
+function resolveTheme(theme) {
+    if (theme === 'system') {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return theme;
+}
+
+function applyTheme(theme) {
+    const resolved = resolveTheme(theme);
+    themeLink.href = `css/themes/${resolved}-theme.css`;
+
+    // Mover el ícono fa-check al ítem activo
+    themeItems.forEach(item => {
+        const check = item.querySelector('.fa-solid.fa-check');
+        if (check) check.remove();
+    });
+    const activeIndex = theme === 'light' ? 0 : theme === 'dark' ? 1 : 2;
+    const checkIcon = document.createElement('i');
+    checkIcon.className = 'fa-solid fa-check';
+    themeItems[activeIndex].appendChild(checkIcon);
+
+    // Actualizar ícono del botón toggle
+    toggleIcon.className = resolved === 'dark' ? 'fa-regular fa-moon' : 'fa-regular fa-sun';
+
+    localStorage.setItem('theme', theme);
+}
+
+// Cargar preferencia guardada
+applyTheme(localStorage.getItem('theme') || 'system');
+
+// Escuchar clics en el menú de tema
+themeItems[0].addEventListener('click', () => applyTheme('light'));
+themeItems[1].addEventListener('click', () => applyTheme('dark'));
+themeItems[2].addEventListener('click', () => applyTheme('system'));
+
+// Actualizar si cambia la preferencia del sistema mientras está en "system"
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (localStorage.getItem('theme') === 'system' || !localStorage.getItem('theme')) {
+        applyTheme('system');
+    }
 });

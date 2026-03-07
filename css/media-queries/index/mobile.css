@@ -153,7 +153,7 @@
 
     .ui__menu li {
         align-items: center;
-        color: #e0e0e0;
+        color: var(--text-primary-dark);
         cursor: pointer;
         display: flex;
         font-size: 1.44rem;
@@ -357,6 +357,7 @@
         flex-direction: column;
         gap: 1.2rem;
         height: 100%;
+        margin: 0 1.6rem;
         max-height: 49rem;
         max-width: 51rem;
         width: 100%;
@@ -402,7 +403,7 @@
 
     .modal__search__shortcut {
         background: var(--bg-surface-dark);
-        border: 1px solid var(--border-dark);
+        border: 0.1rem solid var(--border-dark);
         border-radius: 0.4rem;
         color: var(--text-muted-dark);
         font-size: var(--font-size-xs);
@@ -439,129 +440,11 @@
     }
 
     /* =====================
-   MODAL NEWSLETTER
+   MODAL DE NEWSLETTER
    ===================== */
 
     .modal__newsletter {
-        align-items: flex-start;
-        background: transparent;
         display: none;
-        height: 100vh;
-        justify-content: flex-end;
-        position: fixed;
-        top: 6rem;
-        width: 100vw;
-        z-index: 3;
-    }
-
-    .modal__newsletter.active {
-        display: flex;
-    }
-
-    .modal__newsletter__dialog {
-        background: var(--bg-page-dark);
-        border: 1px solid var(--border-dark);
-        border-radius: 1rem;
-        box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.25);
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        padding: 1.2rem;
-        position: relative;
-        right: 1.6rem;
-        width: 32rem;
-    }
-
-    .modal__newsletter__header {
-        align-items: flex-start;
-        display: flex;
-        gap: 2rem;
-        justify-content: space-between;
-        margin-bottom: 0.6rem;
-    }
-
-    .modal__newsletter__title {
-        color: var(--text-primary-dark);
-        font-size: var(--font-size-md);
-        font-weight: 600;
-        margin-bottom: 0.4rem;
-    }
-
-    .modal__newsletter__desc {
-        color: var(--text-muted-dark);
-        font-size: var(--font-size-md);
-    }
-
-    .modal__newsletter__icon {
-        color: var(--text-muted-dark);
-        font-size: 1.8rem;
-        margin-left: 0;
-        padding: 0 1rem;
-        position: relative;
-    }
-
-    .modal__newsletter__form {
-        align-items: center;
-        background: #181b20;
-        border: 1.5px solid #353a40;
-        border-radius: var(--radius-lg);
-        display: flex;
-        gap: 0.5rem;
-        padding: 0.6rem;
-    }
-
-    .modal__newsletter__form:focus-within {
-        box-shadow: 0 0 0 0.1rem rgba(255, 255, 255, 0.08),
-            0 0.4rem 2.4rem rgba(0, 0, 0, 0.4);
-    }
-
-    .modal__newsletter__input {
-        background: transparent;
-        border: none;
-        color: var(--text-primary-dark);
-        flex: 1;
-        font-size: var(--font-size-md);
-        outline: none;
-        padding: 1.2rem;
-        width: 100%;
-    }
-
-    .modal__newsletter__input::placeholder {
-        color: var(--text-muted-dark);
-        opacity: 0.7;
-    }
-
-    .modal__newsletter__input:not(:placeholder-shown)~.modal__newsletter__submit {
-        background: #4e86ff;
-        opacity: 1;
-        z-index: 1;
-    }
-
-    .modal__newsletter__input:not(:placeholder-shown)~.modal__newsletter__submit:hover {
-        background-color: #355392;
-    }
-
-    .modal__newsletter__input:placeholder-shown~.modal__newsletter__submit {
-        cursor: default;
-    }
-
-    .modal__newsletter__submit {
-        background: #355392;
-        border: none;
-        border-radius: var(--radius-sm);
-        color: var(--text-primary-dark);
-        font-size: var(--font-size-md);
-        font-weight: 500;
-        margin: 0.4rem;
-        opacity: 0.5;
-        padding: .8rem 1.8rem;
-        position: relative;
-        transition: background 0.3s ease, opacity 0.3s ease;
-        z-index: 1;
-    }
-
-    .modal__newsletter__submit:hover {
-        background-color: #4e86ff;
     }
 
     /* =====================
@@ -783,7 +666,7 @@
     }
 
     .profile__content p {
-        color: #d6d3d1;
+        color: var(--text-primary-dark);
         font-family: var(--font-family);
         font-size: var(--font-size-lg);
         line-height: 1.5;
