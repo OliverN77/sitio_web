@@ -1,0 +1,7 @@
+:root {
+    --bg-page-light: #f9fafb;      /* Fondo base de la página */
+    --bg-surface-light: #f1f3f5;   /* Fondo de tarjetas y paneles */
+    --border-light: #d1d4d9;       /* Color de bordes */
+    --text-primary-light: #16191c; /* Texto e iconos principales */
+    --text-muted-light: #6b7280;   /* Texto secundario/apagado */
+}

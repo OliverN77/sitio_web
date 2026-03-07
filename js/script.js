@@ -8,9 +8,43 @@ const newsletterModal = document.getElementById('newsletterModal');
 const newsletterOpenBtn = document.querySelector('.ui__newsletter');
 const newsletterCloseBtn = document.querySelector('.modal__newsletter__close');
 const newsletterInput = document.querySelector('.modal__newsletter__input');
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const sidebarToggle = document.querySelector('.sidebar__toggle');
+const sidebarClose = document.querySelector('.sidebar__close');
 let lastScroll = 0;
 
-//Modal de Busqueda
+// Sidebar
+
+function openSidebar() {
+    sidebar.classList.add('active');
+    sidebarOverlay.classList.add('active');
+    sidebar.setAttribute('aria-hidden', 'false');
+    sidebarToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+    sidebar.setAttribute('aria-hidden', 'true');
+    sidebarToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+}
+
+if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', openSidebar);
+}
+
+if (sidebarClose) {
+    sidebarClose.addEventListener('click', closeSidebar);
+}
+
+if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeSidebar);
+}
+
+// Modal de Busqueda
 
 function openSearchModal() {
     searchModal.classList.add('active');
@@ -25,7 +59,6 @@ function closeSearchModal() {
     document.body.style.overflow = '';
 }
 
-// Abrir modal al hacer click en el ícono
 if (searchOpenBtn) {
     searchOpenBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -33,23 +66,20 @@ if (searchOpenBtn) {
     });
 }
 
-
-// Cerrar modal de busqueda al hacer click en la X
 if (searchCloseBtn) {
     searchCloseBtn.addEventListener('click', closeSearchModal);
 }
 
-// Cerrar modal de busqueda al hacer click fuera del diálogo
 if (searchModal) {
     searchModal.addEventListener('click', (e) => {
         if (e.target === searchModal) closeSearchModal();
     });
 }
 
-// Cerrar modal con Escape
 window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && searchModal.classList.contains('active')) {
-        closeSearchModal();
+    if (e.key === 'Escape') {
+        if (sidebar.classList.contains('active')) closeSidebar();
+        if (searchModal.classList.contains('active')) closeSearchModal();
     }
     // Atajo Ctrl+K: alterna el modal
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {

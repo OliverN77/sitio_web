@@ -7,7 +7,8 @@
     <title>Oliver Nieto ⚡️</title>
     <link rel="icon" href="img/hashnode-brands-solid-full.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages/styles.css">
+    <link rel="stylesheet" href="css/themes/dark-theme.css">
 </head>
 
 <body>
@@ -62,8 +63,42 @@
                     <i class="fa-solid fa-pen"></i>
                     <span>Escribir</span>
                 </button>
+                <button class="sidebar__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar" aria-hidden="true">
+            <div class="sidebar__header">
+                <button class="sidebar__close" aria-label="Cerrar menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <nav class="sidebar__nav">
+                <ul>
+                    <li>
+                        <a href="about.html">
+                            <span>about</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sponsor.html">
+                            <span>sponsor</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button onclick="window.open('https://hashnode.com/create/story', '_blank');" class="sidebar__write">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Write</span>
+                </button>
+            </nav>
+        </aside>
+        <div id="sidebarOverlay" class="sidebar__overlay"></div>
+
     </header>
 
     <main>
