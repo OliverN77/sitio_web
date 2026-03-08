@@ -74,6 +74,41 @@
             </div>
         </div>
 
+        <!-- Modal de busqueda -->
+        <div id="searchModal" class="modal__search">
+            <div class="modal__search__dialog">
+                <div class="modal__search__header">
+                    <span class="modal__search__icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="modal__search__input" placeholder="Search posts" autofocus />
+                    <span class="modal__search__shortcut">Ctrl + K</span>
+                    <button class="modal__search__close" aria-label="Cerrar"><i
+                            class="fa-regular fa-circle-xmark"></i></button>
+                </div>
+                <div class="modal__search__body">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal flotante de newsletter -->
+        <div id="newsletterModal" class="modal__newsletter">
+            <div class="modal__newsletter__dialog">
+                <div class="modal__newsletter__header">
+                    <div class="modal__newsletter__text">
+                        <div class="modal__newsletter__title">Subscribe to newsletter</div>
+                        <div class="modal__newsletter__desc">Get new posts in your inbox.</div>
+                    </div>
+                    <div class="modal__newsletter__icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </div>
+                <form class="modal__newsletter__form">
+                    <input type="email" class="modal__newsletter__input" placeholder="you@example.com" />
+                    <button type="submit" class="modal__newsletter__submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
         <!-- Sidebar -->
         <aside id="sidebar" class="sidebar" aria-hidden="true">
             <div class="sidebar__header">
@@ -107,40 +142,6 @@
     </header>
 
     <main>
-        <!-- Modal de busqueda -->
-        <div id="searchModal" class="modal__search">
-            <div class="modal__search__dialog">
-                <div class="modal__search__header">
-                    <span class="modal__search__icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="text" class="modal__search__input" placeholder="Search posts" autofocus />
-                    <span class="modal__search__shortcut">Ctrl + K</span>
-                    <button class="modal__search__close" aria-label="Cerrar"><i
-                            class="fa-regular fa-circle-xmark"></i></button>
-                </div>
-                <div class="modal__search__body">
-                    
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal flotante de newsletter -->
-        <div id="newsletterModal" class="modal__newsletter">
-            <div class="modal__newsletter__dialog">
-                <div class="modal__newsletter__header">
-                    <div class="modal__newsletter__text">
-                        <div class="modal__newsletter__title">Subscribe to newsletter</div>
-                        <div class="modal__newsletter__desc">Get new posts in your inbox.</div>
-                    </div>
-                    <div class="modal__newsletter__icon">
-                        <i class="fa-regular fa-envelope"></i>
-                    </div>
-                </div>
-                <form class="modal__newsletter__form">
-                    <input type="email" class="modal__newsletter__input" placeholder="you@example.com" />
-                    <button type="submit" class="modal__newsletter__submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
 
         <section class="posts__grid">
             <div class="posts__grid__container">
@@ -159,8 +160,7 @@
                 </div>
 
                 <div class="posts__grid__card">
-                    <a href="card.html"
-                        target="_blank">
+                    <a href="card.html" target="_blank">
                         <img src="img/card-3.webp" alt="card3">
                         <h3>Las Mejores Herramientas para Desarrolladores en 2026</h3>
                         <div class="card__info">
@@ -190,8 +190,7 @@
                 </div>
 
                 <div class="posts__grid__card">
-                    <a href="card.html"
-                        target="_blank">
+                    <a href="card.html" target="_blank">
                         <img src="img/card-2.webp" alt="card2">
                         <h3>Cómo el Pair-Programming Mejoró mis Habilidades de Desarrollo</h3>
                         <div class="card__info">
@@ -205,8 +204,7 @@
                 </div>
 
                 <div class="posts__grid__card">
-                    <a href="card.html"
-                        target="_blank">
+                    <a href="card.html" target="_blank">
                         <img src="img/card-5.webp" alt="card5">
                         <h3>Mi Camino desde Cero hasta Desarrollador Web</h3>
                         <div class="card__info">
@@ -273,8 +271,7 @@
         <section class="post__list">
             <div class="post__list__container">
                 <div class="post__list__card">
-                    <a href="card.html"
-                        target="_blank">
+                    <a href="card.html" target="_blank">
                         <img src="img/card-6.webp" alt="card6">
                         <h2>CSS y Animaciones: Una Colección de Recursos y Tutoriales Útiles</h2>
                         <p>Originalmente publicado como un hilo en redes sociales, quise compilar esta lista de recursos
@@ -291,8 +288,7 @@
                 </div>
 
                 <div class="post__list__card">
-                    <a href="card.html"
-                        target="_blank">
+                    <a href="card.html" target="_blank">
                         <img src="img/card-7.webp" alt="card7">
                         <h2>Reflexiones Sobre el Aprendizaje Continuo en Desarrollo</h2>
                         <p>Reflexiones personales sobre el proceso de aprendizaje, la importancia de la práctica
@@ -309,8 +305,7 @@
                 </div>
 
                 <div class="post__list__card">
-                    <a href="card.html"
-                        target="_blank">
+                    <a href="card.html" target="_blank">
                         <img src="img/card-8.webp" alt="card8">
                         <h2>Conseguir Tu Primer Trabajo en Tecnología: Consejos de Desarrolladores Senior...</h2>
                         <p>Poco después de graduarme como Técnico en Programación de Software, comencé a buscar mi
@@ -327,8 +322,7 @@
                 </div>
 
                 <div class="post__list__card">
-                    <a href="card.html"
-                        target="_blank">
+                    <a href="card.html" target="_blank">
                         <img src="img/card-9.webp" alt="card9">
                         <h2>Sobre Aprender a Programar y los Desafíos de Reinventarse</h2>
                         <p>Recuerdo el momento exacto en que comencé a enamorarme de la programación. Y créeme, mi

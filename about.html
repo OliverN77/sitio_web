@@ -4,23 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/hashnode-brands-solid-full.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>About</title>
+    <link rel="stylesheet" href="css/pages/about.css">
+    <link rel="stylesheet" href="css/themes/dark-theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="css/media-queries/about/desktop-xl.css">
+    <link rel="stylesheet" href="css/media-queries/about/desktop.css">
+    <link rel="stylesheet" href="css/media-queries/about/tablet-lg.css">
+    <link rel="stylesheet" href="css/media-queries/about/tablet.css">
+    <link rel="stylesheet" href="css/media-queries/about/mobile-lg.css">
+    <link rel="stylesheet" href="css/media-queries/about/mobile.css">
 </head>
 
 <body>
     <header class="header__header">
         <div class="header__wrapper">
             <div class="header__content">
-                <a href="index.html">
+                <a href="https://hashnode.com/?utm_source=https%3A%2F%2Fblog.anniebombanie.com&utm_medium=referral&utm_campaign=blog_header_logo&utm_content=logo"
+                    target="_blank">
                     <i class="fa-brands fa-hashnode"></i>
-                    <span></span>
+                </a>
+                <span></span>
+                <a href="index.html" class="header__h1__link">
                     <h1>OliverNieto ⚡️</h1>
                 </a>
             </div>
             <nav class="header__nav">
                 <ul>
-                    <li><a href="about.html">about</a></li>
+                    <li><a href="about.html">acerca de</a></li>
                     <li><a href="sponsor.html">sponsor</a></li>
                 </ul>
             </nav>
@@ -35,15 +47,15 @@
                     <ul class="ui__menu">
                         <li>
                             <i class="fa-regular fa-sun"></i>
-                            <span>Light</span>
+                            <span>Claro</span>
                         </li>
                         <li>
                             <i class="fa-regular fa-moon"></i>
-                            <span>Dark</span>
+                            <span>Oscuro</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-laptop"></i>
-                            <span>System</span>
+                            <span>Sistema</span>
                             <i class="fa-solid fa-check"></i>
                         </li>
                     </ul>
@@ -51,174 +63,253 @@
 
                 <button class="ui__newsletter">
                     <i class="fa-regular fa-envelope"></i>
-                    <span>Subscribe</span>
+                    <span>Suscribirse</span>
                 </button>
-                <button class="ui__write">
+                <button onclick="window.open('https://hashnode.com/create/story', '_blank');" class="ui__write">
                     <i class="fa-solid fa-pen"></i>
-                    <span>Write</span>
+                    <span>Escribir</span>
+                </button>
+                <button class="sidebar__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
+
+        <!-- Modal de busqueda -->
+        <div id="searchModal" class="modal__search">
+            <div class="modal__search__dialog">
+                <div class="modal__search__header">
+                    <span class="modal__search__icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="modal__search__input" placeholder="Search posts" autofocus />
+                    <span class="modal__search__shortcut">Ctrl + K</span>
+                    <button class="modal__search__close" aria-label="Cerrar"><i
+                            class="fa-regular fa-circle-xmark"></i></button>
+                </div>
+                <div class="modal__search__body">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal flotante de newsletter -->
+        <div id="newsletterModal" class="modal__newsletter">
+            <div class="modal__newsletter__dialog">
+                <div class="modal__newsletter__header">
+                    <div class="modal__newsletter__text">
+                        <div class="modal__newsletter__title">Subscribe to newsletter</div>
+                        <div class="modal__newsletter__desc">Get new posts in your inbox.</div>
+                    </div>
+                    <div class="modal__newsletter__icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </div>
+                <form class="modal__newsletter__form">
+                    <input type="email" class="modal__newsletter__input" placeholder="you@example.com" />
+                    <button type="submit" class="modal__newsletter__submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar" aria-hidden="true">
+            <div class="sidebar__header">
+                <button class="sidebar__close" aria-label="Cerrar menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <nav class="sidebar__nav">
+                <ul>
+                    <li>
+                        <a href="about.html">
+                            <span>acerca de</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sponsor.html">
+                            <span>sponsor</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button onclick="window.open('https://hashnode.com/create/story', '_blank');" class="sidebar__write">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Escribir</span>
+                </button>
+            </nav>
+        </aside>
+        <div id="sidebarOverlay" class="sidebar__overlay"></div>
+
     </header>
 
     <main class="about-page">
-        <section class="about-hero">
-            <div class="about-hero__container">
-                <h1 class="about-hero__title">Acerca de mí</h1>
-            </div>
-        </section>
+        <div class="about-page__container">
 
-        <section class="about-intro">
-            <div class="about-intro__container">
-                <h2 class="about-intro__title">👋 ¡Hola! Soy Oliver</h2>
-
-                <div class="about-intro__content">
-                    <p>
-                        Soy Oliver, un apasionado desarrollador web enfocado en crear experiencias modernas e
-                        interactivas. Actualmente me considero a un buen nivel en
-                        <strong>HTML, CSS, JavaScript, Node.js, PHP, Python y MySQL</strong>.
-                    </p>
-
-                    <p>
-                        Mi objetivo es estudiar Ingeniería en Sistemas para profundizar mis conocimientos y
-                        convertirme en un profesional más completo. Disfruto creando proyectos que resuelven
-                        problemas reales y me ayudan a entender cómo funciona la web de principio a fin.
-                    </p>
-
-                    <p>
-                        Mi stack actual incluye varias tecnologías tanto para front-end como back-end. Trabajo
-                        con bases de datos relacionales, APIs REST, diseño de interfaces y me enfoco en mejorar
-                        el rendimiento y la accesibilidad de mis proyectos, y claramente hago lo posible por cada día
-                        mejorar.
-                    </p>
-
-                    <p>
-                        Me gusta mucho la música, sobre todo el rap, ya sea en inglés o en español. También me gusta el
-                        fútbol, aunque ahora no lo veo mucho. Mis colores favoritos son el negro, el blanco y el morado.
-                        Me gusta mantener una buena alimentación junto con un buen estado físico.
-                    <p>
-                        Soy más feliz cuando estoy aprendiendo algo nuevo, construyendo proyectos paralelos y
-                        compartiendo lo que descubro en el camino. Para conocer más sobre mi trabajo, siéntete
-                        libre de <a href="https://portfolio-theta-mocha-41.vercel.app/"
-                            class="about-intro__link">revisar mi portafolio</a>.
-                    </p>
+            <section class="about-hero">
+                <div class="about-hero__container">
+                    <h1 class="about-hero__title">Acerca de mí</h1>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="about-memes">
-            <div class="about-memes__container">
-                <h2 class="about-memes__title">
-                    😄 Un par de memes que describen mi vida como desarrollador:
-                </h2>
+            <section class="about-intro">
+                <div class="about-intro__container">
+                    <h2 class="about-intro__title">👋 ¡Hola! Soy Oliver</h2>
 
-                <div class="about-memes__grid">
-                    <div class="meme-card">
-                        <img src="img/meme-1.jpg" alt="Meme de desarrollador" class="meme-card__image">
-                    </div>
-
-                    <div class="meme-card meme-card--highlight">
-                        <p class="meme-card__text">
-                            Esta interfaz fue construida con CSS puro y mucha paciencia. Una de mis formas
-                            favoritas de aprender CSS es recreando diseños desde cero y experimentando con
-                            layouts y animaciones.
+                    <div class="about-intro__content">
+                        <p>
+                            Soy Oliver, un apasionado desarrollador web enfocado en crear experiencias modernas e
+                            interactivas. Actualmente me considero a un buen nivel en
+                            <strong>HTML, CSS, JavaScript, Node.js, PHP, Python y MySQL</strong>.
                         </p>
-                        <img src="img/meme-2.jpg" alt="Meme de CSS" class="meme-card__image">
-                        <p class="meme-card__caption">
-                            CSS puede parecer simple al principio, pero dominar layouts, responsividad y estilos
-                            limpios es un verdadero superpoder en el desarrollo front-end.
+
+                        <p>
+                            Mi objetivo es estudiar Ingeniería en Sistemas para profundizar mis conocimientos y
+                            convertirme en un profesional más completo. Disfruto creando proyectos que resuelven
+                            problemas reales y me ayudan a entender cómo funciona la web de principio a fin.
+                        </p>
+
+                        <p>
+                            Mi stack actual incluye varias tecnologías tanto para front-end como back-end. Trabajo
+                            con bases de datos relacionales, APIs REST, diseño de interfaces y me enfoco en mejorar
+                            el rendimiento y la accesibilidad de mis proyectos, y claramente hago lo posible por cada
+                            día
+                            mejorar.
+                        </p>
+
+                        <p>
+                            Me gusta mucho la música, sobre todo el rap, ya sea en inglés o en español. También me gusta
+                            el
+                            fútbol, aunque ahora no lo veo mucho. Mis colores favoritos son el negro, el blanco y el
+                            morado.
+                            Me gusta mantener una buena alimentación junto con un buen estado físico.
+                        <p>
+                            Soy más feliz cuando estoy aprendiendo algo nuevo, construyendo proyectos paralelos y
+                            compartiendo lo que descubro en el camino. Para conocer más sobre mi trabajo, siéntete
+                            libre de <a href="https://portfolio-theta-mocha-41.vercel.app/"
+                                class="about-intro__link">revisar mi portafolio</a>.
                         </p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="about-facts">
-            <div class="about-facts__container">
-                <h2 class="about-facts__title">🤓 Datos curiosos sobre mí:</h2>
+            <section class="about-memes">
+                <div class="about-memes__container">
+                    <h2 class="about-memes__title">
+                        😄 Un par de memes que describen mi vida como desarrollador:
+                    </h2>
 
-                <ul class="about-facts__list">
-                    <li class="about-facts__item">
-                        <span class="about-facts__icon">💻</span>
-                        <div class="about-facts__content">
-                            <strong>Entorno de programación:</strong> Modo oscuro 🌑 + música 🎧 + café ☕
+                    <div class="about-memes__grid">
+                        <div class="meme-card">
+                            <img src="img/meme-1.jpg" alt="Meme de desarrollador" class="meme-card__image">
                         </div>
-                    </li>
 
-                    <li class="about-facts__item">
-                        <span class="about-facts__icon">🚀</span>
-                        <div class="about-facts__content">
-                            <strong>Proyectos favoritos:</strong> Dashboards, aplicaciones interactivas e integraciones
-                            con APIs
+                        <div class="meme-card meme-card--highlight">
+                            <p class="meme-card__text">
+                                Esta interfaz fue construida con CSS puro y mucha paciencia. Una de mis formas
+                                favoritas de aprender CSS es recreando diseños desde cero y experimentando con
+                                layouts y animaciones.
+                            </p>
+                            <img src="img/meme-2.jpg" alt="Meme de CSS" class="meme-card__image">
+                            <p class="meme-card__caption">
+                                CSS puede parecer simple al principio, pero dominar layouts, responsividad y estilos
+                                limpios es un verdadero superpoder en el desarrollo front-end.
+                            </p>
                         </div>
-                    </li>
+                    </div>
+                </div>
+            </section>
 
-                    <li class="about-facts__item">
-                        <span class="about-facts__icon">📚</span>
-                        <div class="about-facts__content">
-                            <strong>Aprendiendo actualmente:</strong> Patrones avanzados de desarrollo, arquitectura de
-                            backend
-                            y construcción de aplicaciones full-stack escalables
-                        </div>
-                    </li>
+            <section class="about-facts">
+                <div class="about-facts__container">
+                    <h2 class="about-facts__title">🤓 Datos curiosos sobre mí:</h2>
 
-                    <li class="about-facts__item">
-                        <span class="about-facts__icon">🎯</span>
-                        <div class="about-facts__content">
-                            <strong>Meta:</strong> Estudiar Ingeniería en Sistemas y construir productos significativos
-                        </div>
-                    </li>
+                    <ul class="about-facts__list">
+                        <li class="about-facts__item">
+                            <span class="about-facts__icon">💻</span>
+                            <div class="about-facts__content">
+                                <strong>Entorno de programación:</strong> Modo oscuro 🌑 + música 🎧 + café ☕
+                            </div>
+                        </li>
 
-                    <li class="about-facts__item">
-                        <span class="about-facts__icon">🌐</span>
-                        <div class="about-facts__content">
-                            <strong>Encuéntrame en línea:</strong>
-                            <a href="#" class="about-facts__link">GitHub</a>,
-                            <a href="#" class="about-facts__link">LinkedIn</a>,
-                            <a href="#" class="about-facts__link">Portafolio</a>,
-                            <a href="#" class="about-facts__link">Blog Dev</a>
-                        </div>
-                    </li>
+                        <li class="about-facts__item">
+                            <span class="about-facts__icon">🚀</span>
+                            <div class="about-facts__content">
+                                <strong>Proyectos favoritos:</strong> Dashboards, aplicaciones interactivas e
+                                integraciones
+                                con APIs
+                            </div>
+                        </li>
 
-                    <li class="about-facts__item">
-                        <span class="about-facts__icon">💬</span>
-                        <div class="about-facts__content">
-                            <strong>Cita favorita:</strong>
-                            <em>"La mejor manera de aprender a programar es construyendo cosas y manteniéndose
-                                curioso."</em>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
+                        <li class="about-facts__item">
+                            <span class="about-facts__icon">📚</span>
+                            <div class="about-facts__content">
+                                <strong>Aprendiendo actualmente:</strong> Patrones avanzados de desarrollo, arquitectura
+                                de
+                                backend
+                                y construcción de aplicaciones full-stack escalables
+                            </div>
+                        </li>
 
-        <section class="about-closing">
-            <div class="about-closing__container">
-                <p class="about-closing__paragraph">
-                    ¡Gracias por visitar! Si estás aquí, probablemente estés aprendiendo, construyendo o
-                    explorando tecnología — y eso ya es una victoria 🚀
-                </p>
+                        <li class="about-facts__item">
+                            <span class="about-facts__icon">🎯</span>
+                            <div class="about-facts__content">
+                                <strong>Meta:</strong> Estudiar Ingeniería en Sistemas y construir productos
+                                significativos
+                            </div>
+                        </li>
 
-                <p class="about-closing__paragraph">
-                    Espero que tus bugs sean fáciles de arreglar, tus APIs siempre respondan y tus divs se
-                    mantengan centrados 😎
-                </p>
-            </div>
-        </section>
+                        <li class="about-facts__item">
+                            <span class="about-facts__icon">🌐</span>
+                            <div class="about-facts__content">
+                                <strong>Encuéntrame en línea:</strong>
+                                <a href="#" class="about-facts__link">GitHub</a>,
+                                <a href="#" class="about-facts__link">LinkedIn</a>,
+                                <a href="#" class="about-facts__link">Portafolio</a>,
+                                <a href="#" class="about-facts__link">Blog Dev</a>
+                            </div>
+                        </li>
+
+                        <li class="about-facts__item">
+                            <span class="about-facts__icon">💬</span>
+                            <div class="about-facts__content">
+                                <strong>Cita favorita:</strong>
+                                <em>"La mejor manera de aprender a programar es construyendo cosas y manteniéndose
+                                    curioso."</em>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="about-closing">
+                <div class="about-closing__container">
+                    <p class="about-closing__paragraph">
+                        ¡Gracias por visitar! Si estás aquí, probablemente estés aprendiendo, construyendo o
+                        explorando tecnología — y eso ya es una victoria 🚀
+                    </p>
+
+                    <p class="about-closing__paragraph">
+                        Espero que tus bugs sean fáciles de arreglar, tus APIs siempre respondan y tus divs se
+                        mantengan centrados 😎
+                    </p>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Oliver Nieto. ⚡️</p>
+        <p style="font-family: sans-serif;">&copy; <span style="font-family: var(--font-family);"> 2026 Oliver Nieto.
+                ⚡️</span></p>
         <nav>
             <ul>
-                <a href="archive.html">
-                    Archive
+                <a href="https://blog.anniebombanie.com/archive" target="_blank">
+                    Archivo
                 </a>
-                <a href="https://hashnode.com/@privacy">
-                    Privacy
+                <a href="https://hashnode.com/@privacy" target="_blank">
+                    Privacidad
                 </a>
-                <a href="https://hashnode.com/terms">
-                    Terms
+                <a href="https://hashnode.com/terms" target="_blank">
+                    Términos
                 </a>
             </ul>
         </nav>
@@ -226,13 +317,16 @@
             <a href="https://blog.anniebombanie.com/sitemap.xml"><i class="fa-solid fa-sitemap"></i>Sitemap</a>
             <a href="https://blog.anniebombanie.com/rss.xml"><i class="fa-solid fa-rss"></i>RSS</a>
         </div>
-        <div class="hasnode__link">
+        <div class="hashnode__link">
             <a href="https://hashnode.com/@olivernieto" target="_blank">
                 <i class="fa-brands fa-hashnode"></i>
-                <span>OliverNieto</span>
+                <span>hashnode</span>
             </a>
         </div>
     </footer>
+
+    <script src="/js/script.js"></script>
+
 </body>
 
 </html>
