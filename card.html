@@ -3,18 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="img/hashnode-brands-solid-full.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Mis Proyectos - Oliver Nieto</title>
+    <link rel="stylesheet" href="css//pages/card.css">
+    <link rel="stylesheet" href="css/themes/dark-theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="css/media-queries/card/desktop-xl.css">
+    <link rel="stylesheet" href="css/media-queries/card/desktop.css">
+    <link rel="stylesheet" href="css/media-queries/card/tablet-lg.css">
+    <link rel="stylesheet" href="css/media-queries/card/tablet.css">
+    <link rel="stylesheet" href="css/media-queries/card/mobile-lg.css">
+    <link rel="stylesheet" href="css/media-queries/card/mobile.css">
 </head>
 
 <body>
     <header class="header__header">
         <div class="header__wrapper">
             <div class="header__content">
-                <a href="index.html">
+                <a href="https://hashnode.com/?utm_source=https%3A%2F%2Fblog.anniebombanie.com&utm_medium=referral&utm_campaign=blog_header_logo&utm_content=logo"
+                    target="_blank">
                     <i class="fa-brands fa-hashnode"></i>
-                    <span></span>
+                </a>
+                <span></span>
+                <a href="index.html" class="header__h1__link">
                     <h1>OliverNieto ⚡️</h1>
                 </a>
             </div>
@@ -53,230 +65,352 @@
                     <i class="fa-regular fa-envelope"></i>
                     <span>Suscribirse</span>
                 </button>
-                <button class="ui__write">
+                <button onclick="window.open('https://hashnode.com/create/story', '_blank');" class="ui__write">
                     <i class="fa-solid fa-pen"></i>
                     <span>Escribir</span>
                 </button>
+                <button class="sidebar__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
+
+        <!-- Modal de busqueda -->
+        <div id="searchModal" class="modal__search">
+            <div class="modal__search__dialog">
+                <div class="modal__search__header">
+                    <span class="modal__search__icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="modal__search__input" placeholder="Search posts" autofocus />
+                    <span class="modal__search__shortcut">Ctrl + K</span>
+                    <button class="modal__search__close" aria-label="Cerrar"><i
+                            class="fa-regular fa-circle-xmark"></i></button>
+                </div>
+                <div class="modal__search__body">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal flotante de newsletter -->
+        <div id="newsletterModal" class="modal__newsletter">
+            <div class="modal__newsletter__dialog">
+                <div class="modal__newsletter__header">
+                    <div class="modal__newsletter__text">
+                        <div class="modal__newsletter__title">Subscribe to newsletter</div>
+                        <div class="modal__newsletter__desc">Get new posts in your inbox.</div>
+                    </div>
+                    <div class="modal__newsletter__icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </div>
+                <form class="modal__newsletter__form">
+                    <input type="email" class="modal__newsletter__input" placeholder="you@example.com" />
+                    <button type="submit" class="modal__newsletter__submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar" aria-hidden="true">
+            <div class="sidebar__header">
+                <button class="sidebar__close" aria-label="Cerrar menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <nav class="sidebar__nav">
+                <ul>
+                    <li>
+                        <a href="about.html">
+                            <span>acerca de</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sponsor.html">
+                            <span>sponsor</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button onclick="window.open('https://hashnode.com/create/story', '_blank');" class="sidebar__write">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Escribir</span>
+                </button>
+            </nav>
+        </aside>
+        <div id="sidebarOverlay" class="sidebar__overlay"></div>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>3 Proyectos Prácticos que Construí para Fortalecer mis Habilidades en Desarrollo Web</h1>
-            <p>Explora tres proyectos completos que desarrollé utilizando HTML, CSS, JavaScript y APIs. Cada uno representa un desafío diferente en mi camino como desarrollador.</p>
-
-            <div class="hero__info">
-                <i class="fa-regular fa-calendar"></i><span>Publicado Febrero 20, 2026</span> <span>·</span><i
-                    class="fa-regular fa-clock"></i><span>8 min lectura</span>
+        <div class="main__container">
+            <section class="hero">
+                <div class="hero__container">
+                    <h1>3 Proyectos Prácticos que Construí para Fortalecer mis Habilidades en Desarrollo Web</h1>
+                    <p>Explora tres proyectos completos que desarrollé utilizando HTML, CSS, JavaScript y APIs. Cada uno
+                        representa un desafío diferente en mi camino como desarrollador.</p>
+                    <div class="hero__info">
+                        <i class="fa-regular fa-calendar"></i><span>Publicado Febrero 20, 2026</span> <span>·</span><i
+                            class="fa-regular fa-clock"></i><span>8 min lectura</span>
+                    </div>
+                </div>
                 <img src="img/card-1.webp" alt="Proyectos de desarrollo web">
-            </div>
-        </section>
+            </section>
 
-        <aside class="article-sidebar">
-            <nav class="article-sidebar__nav">
-                <h2 class="article-sidebar__title">EN ESTA PÁGINA</h2>
-                <ul class="article-sidebar__list">
-                    <li class="article-sidebar__item">
-                        <a href="#los-tres-proyectos" class="article-sidebar__link">Los Tres Proyectos</a>
-                    </li>
+            <button id="tocToggle" class="toc__toggle" aria-label="Abrir tabla de contenidos" aria-expanded="false" aria-controls="articleSidebar">
+                <i class="fa-solid fa-bars-staggered"></i>
+                <span>Contents</span>
+            </button>
+            <div id="tocOverlay" class="toc__overlay"></div>
 
-                    <li class="article-sidebar__item article-sidebar__item--nested">
-                        <a href="#proyecto-1" class="article-sidebar__link">1. Tienda Online Responsiva</a>
-                        <ul class="article-sidebar__sublist">
-                            <li class="article-sidebar__item article-sidebar__item--bonus">
-                                <span class="article-sidebar__icon">⚡</span>
-                                <a href="#tecnologias-store" class="article-sidebar__link">Tecnologías Utilizadas</a>
+            <div class="article-layout">
+                <aside id="articleSidebar" class="article-sidebar">
+                    <div class="article-sidebar__header">
+                        <span class="article-sidebar__span">Table of Contents</span>
+                        <button id="tocClose" class="article-sidebar__close" aria-label="Cerrar tabla de contenidos">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <nav class="article-sidebar__nav">
+                        <h2 class="article-sidebar__title">EN ESTA PÁGINA</h2>
+                        <ul class="article-sidebar__list">
+                            <li class="article-sidebar__item">
+                                <a href="#los-tres-proyectos" class="article-sidebar__link">Los Tres Proyectos</a>
+                            </li>
+
+                            <li class="article-sidebar__item article-sidebar__item--nested">
+                                <a href="#proyecto-1" class="article-sidebar__link">1. Tienda Online Responsiva</a>
+                                <ul class="article-sidebar__sublist">
+                                    <li class="article-sidebar__item article-sidebar__item--bonus">
+                                        <span class="article-sidebar__icon">⚡</span>
+                                        <a href="#tecnologias-store" class="article-sidebar__link">Tecnologías
+                                            Utilizadas</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="article-sidebar__item article-sidebar__item--nested">
+                                <a href="#proyecto-2" class="article-sidebar__link">2. Aplicación del Clima</a>
+                                <ul class="article-sidebar__sublist">
+                                    <li class="article-sidebar__item article-sidebar__item--bonus">
+                                        <span class="article-sidebar__icon">⚡</span>
+                                        <a href="#aprendizajes-weather" class="article-sidebar__link">Aprendizajes
+                                            Clave</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="article-sidebar__item article-sidebar__item--nested">
+                                <a href="#proyecto-3" class="article-sidebar__link">3. Calculadora de Notas</a>
+                                <ul class="article-sidebar__sublist">
+                                    <li class="article-sidebar__item article-sidebar__item--bonus">
+                                        <span class="article-sidebar__icon">⚡</span>
+                                        <a href="#funcionalidades-calc"
+                                            class="article-sidebar__link">Funcionalidades</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="article-sidebar__item">
+                                <a href="#conclusiones" class="article-sidebar__link">Conclusiones</a>
                             </li>
                         </ul>
-                    </li>
+                    </nav>
+                </aside>
 
-                    <li class="article-sidebar__item article-sidebar__item--nested">
-                        <a href="#proyecto-2" class="article-sidebar__link">2. Aplicación del Clima</a>
-                        <ul class="article-sidebar__sublist">
-                            <li class="article-sidebar__item article-sidebar__item--bonus">
-                                <span class="article-sidebar__icon">⚡</span>
-                                <a href="#aprendizajes-weather" class="article-sidebar__link">Aprendizajes Clave</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="article-sidebar__item article-sidebar__item--nested">
-                        <a href="#proyecto-3" class="article-sidebar__link">3. Calculadora de Notas</a>
-                        <ul class="article-sidebar__sublist">
-                            <li class="article-sidebar__item article-sidebar__item--bonus">
-                                <span class="article-sidebar__icon">⚡</span>
-                                <a href="#funcionalidades-calc" class="article-sidebar__link">Funcionalidades</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="article-sidebar__item">
-                        <a href="#conclusiones" class="article-sidebar__link">Conclusiones</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <section class="article-intro">
-            <div class="article-author">
-                <img src="img/avatar.jpg" alt="Oliver Nieto" class="article-author__avatar">
-                <div class="article-author__info">
-                    <h3 class="article-author__name">Oliver ⚡💻</h3>
-                    <p class="article-author__bio">
-                        ¡Hola! Soy Oliver 👋 Un apasionado desarrollador enfocado en crear experiencias web modernas
-                        usando HTML, CSS, JavaScript, Node.js, PHP, Python y MySQL. Disfruto construyendo proyectos
-                        prácticos, aprendiendo nuevas tecnologías y compartiendo conocimiento con otros desarrolladores
-                        en su camino de aprendizaje.
-                    </p>
-                </div>
-            </div>
+                <div class="article-content">
+                    <section class="article-intro">
+                        <div class="article-author">
+                            <img src="img/avatar.webp" alt="Oliver Nieto">
+                            <h3>Oliver ⚡💻</h3>
+                        </div>
+                        <div class="article-author__info">
+                            <p>
+                                ¡Hola! Soy Oliver 👋 Un apasionado desarrollador enfocado en crear experiencias web
+                                modernas
+                                usando HTML, CSS, JavaScript, Node.js, PHP, Python y MySQL. Disfruto construyendo
+                                proyectos
+                                prácticos, aprendiendo nuevas tecnologías y compartiendo conocimiento con otros
+                                desarrolladores
+                                en su camino de aprendizaje.
+                            </p>
+                        </div>
 
 
-            <div class="article-intro__content">
-                <p class="article-intro__paragraph article-intro__paragraph--lead">
-                    Construir proyectos reales es la mejor forma de aprender.
-                    <strong>Estos tres proyectos representan hitos importantes en mi desarrollo como programador</strong>,
-                    cada uno enfocado en resolver problemas específicos y dominar diferentes tecnologías.
-                </p>
+                        <div class="article-intro__content">
+                            <p class="article-intro__paragraph article-intro__paragraph--lead">
+                                Construir proyectos reales es la mejor forma de aprender.
+                                <strong>Estos tres proyectos representan hitos importantes en mi desarrollo como
+                                    programador</strong>,
+                                cada uno enfocado en resolver problemas específicos y dominar diferentes tecnologías.
+                            </p>
 
-                <p class="article-intro__paragraph">
-                    A lo largo de mi aprendizaje, he descubierto que la teoría sin práctica no tiene sentido.
-                    Por eso decidí crear proyectos completos que pudiera mostrar en mi portafolio y que
-                    realmente demostraran mis habilidades.
-                </p>
+                            <p class="article-intro__paragraph">
+                                A lo largo de mi aprendizaje, he descubierto que la teoría sin práctica no tiene
+                                sentido.
+                                Por eso decidí crear proyectos completos que pudiera mostrar en mi portafolio y que
+                                realmente demostraran mis habilidades.
+                            </p>
 
-                <p class="article-intro__paragraph">
-                    En este artículo comparto tres proyectos que construí desde cero, los desafíos que enfrenté,
-                    las soluciones que implementé y las lecciones que aprendí en el proceso. Todos los proyectos
-                    están disponibles en mi
-                    <a href="https://github.com/OliverN77" target="_blank" class="article-intro__link">GitHub</a>
-                    para que puedas explorarlos y aprender de ellos.
-                </p>
+                            <p class="article-intro__paragraph">
+                                En este artículo comparto tres proyectos que construí desde cero, los desafíos que
+                                enfrenté,
+                                las soluciones que implementé y las lecciones que aprendí en el proceso. Todos los
+                                proyectos
+                                están disponibles en mi <a href="https://github.com/OliverN77"
+                                    target="_blank">GitHub</a> para que puedas explorarlos y aprender de ellos.
+                            </p>
 
-                <p class="article-intro__paragraph">
-                    Sigue leyendo y descubre cómo estos proyectos me ayudaron a mejorar mis habilidades.
-                </p>
-            </div>
-        </section>
+                            <p class="article-intro__paragraph">
+                                Sigue leyendo y descubre cómo estos proyectos me ayudaron a mejorar mis habilidades.
+                            </p>
 
-        <section class="article-section" id="los-tres-proyectos">
-            <h2 class="article-section__heading">Los Tres Proyectos</h2>
+                            <hr>
 
-            <article class="project" id="proyecto-1">
-                <h3 class="project__title">1. Tienda Online Responsiva</h3>
+                        </div>
+                    </section>
 
-                <div class="project__content">
-                    <p class="project__paragraph">
-                        Una tienda en línea completa y responsiva construida con <strong>HTML, CSS y JavaScript</strong>.
-                        Este proyecto me permitió practicar diseño de interfaces, manejo de carrito de compras y
-                        responsividad en diferentes dispositivos.
-                    </p>
+                    <section class="article-section" id="los-tres-proyectos">
+                        <h2 class="article-section__heading">Los Tres Proyectos</h2>
 
-                    <p class="project__paragraph">
-                        La tienda incluye una página principal con productos, sistema de filtrado, carrito de compras
-                        funcional con localStorage, y un diseño completamente adaptable a móviles, tablets y escritorio.
-                    </p>
+                        <article class="project" id="proyecto-1">
+                            <h3>1. Tienda Online Responsiva</h3>
 
-                    <div class="project__gallery">
-                        <img src="img/design-1.jpg" alt="Tienda online vista principal" class="project__image">
-                        <img src="img/design-2.jpg" alt="Tienda online vista productos" class="project__image">
-                        <img src="img/design-3.jpg" alt="Tienda online carrito" class="project__image">
-                        <img src="img/design-4.jpg" alt="Tienda online responsive" class="project__image">
-                    </div>
+                            <div class="project__content">
+                                <p class="project__paragraph">
+                                    Una tienda en línea completa y responsiva construida con <strong>HTML, CSS y
+                                        JavaScript</strong>.
+                                    Este proyecto me permitió practicar diseño de interfaces, manejo de carrito de
+                                    compras y
+                                    responsividad en diferentes dispositivos.
+                                </p>
 
-                    <p class="project__paragraph">
-                        El mayor desafío fue implementar la funcionalidad del carrito de compras que persistiera
-                        incluso después de cerrar el navegador. Utilicé localStorage para almacenar los datos
-                        y JavaScript para manejar todas las operaciones de agregar, eliminar y actualizar cantidades.
-                    </p>
+                                <p class="project__paragraph">
+                                    La tienda incluye una página principal con productos, sistema de filtrado, carrito
+                                    de
+                                    compras
+                                    funcional con localStorage, y un diseño completamente adaptable a móviles, tablets y
+                                    escritorio.
+                                </p>
 
-                    <p class="project__paragraph">
-                        Este proyecto me ayudó a entender mejor la manipulación del DOM, eventos de JavaScript
-                        y cómo estructurar código JavaScript de manera organizada y mantenible.
-                    </p>
+                                <div class="project__gallery">
+                                    <img src="img/card/inicio.PNG" alt="Tienda online vista principal"
+                                        class="project__image">
+                                    <img src="img/card/productos.PNG" alt="Tienda online vista productos"
+                                        class="project__image">
+                                    <img src="img/card/carrito.PNG" alt="Tienda online carrito" class="project__image">
+                                    <img src="img/card/responsive.PNG" alt="Tienda online responsive" class="project__image">
+                                </div>
 
-                    <!-- Tecnologías -->
-                    <div class="project__bonus" id="tecnologias-store">
-                        <h4 class="project__bonus-title">⚡ Tecnologías Utilizadas</h4>
-                        <ul class="project__list">
-                            <li class="project__list-item">HTML5 semántico</li>
-                            <li class="project__list-item">CSS3 con Flexbox y Grid</li>
-                            <li class="project__list-item">JavaScript ES6+</li>
-                            <li class="project__list-item">LocalStorage API</li>
-                            <li class="project__list-item">Diseño Mobile-First</li>
-                        </ul>
-                    </div>
+                                <p class="project__paragraph">
+                                    El mayor desafío fue implementar la funcionalidad del carrito de compras que
+                                    persistiera
+                                    incluso después de cerrar el navegador. Utilicé localStorage para almacenar los
+                                    datos
+                                    y JavaScript para manejar todas las operaciones de agregar, eliminar y actualizar
+                                    cantidades.
+                                </p>
 
-                    <p class="project__paragraph">
-                        Una de las mejores decisiones fue trabajar con un enfoque <strong>mobile-first</strong>.
-                        Comencé diseñando para móviles y luego escalé a pantallas más grandes, lo que hizo
-                        que el CSS fuera más limpio y fácil de mantener.
-                    </p>
+                                <p class="project__paragraph">
+                                    Este proyecto me ayudó a entender mejor la manipulación del DOM, eventos de
+                                    JavaScript
+                                    y cómo estructurar código JavaScript de manera organizada y mantenible.
+                                </p>
 
-                    <p class="project__paragraph">
-                        También implementé un sistema de notificaciones cuando se agregan productos al carrito,
-                        transiciones suaves entre secciones y feedback visual en todos los botones interactivos.
-                    </p>
+                                <!-- Tecnologías -->
+                                <div class="project__bonus" id="tecnologias-store">
+                                    <h4 class="project__bonus-title">⚡ Tecnologías Utilizadas</h4>
+                                    <ul class="project__list">
+                                        <li class="project__list-item">HTML5 semántico</li>
+                                        <li class="project__list-item">CSS3 con Flexbox y Grid</li>
+                                        <li class="project__list-item">JavaScript ES6+</li>
+                                        <li class="project__list-item">LocalStorage API</li>
+                                        <li class="project__list-item">Diseño Mobile-First</li>
+                                    </ul>
+                                </div>
 
-                    <p class="project__paragraph">
-                        <a href="https://github.com/OliverN77/store" target="_blank" class="project__link project__link--external">
-                            <i class="fa-solid fa-link"></i>
-                            Ver proyecto completo en GitHub
-                        </a>.
-                    </p>
-                </div>
-            </article>
+                                <p class="project__paragraph">
+                                    Una de las mejores decisiones fue trabajar con un enfoque
+                                    <strong>mobile-first</strong>.
+                                    Comencé diseñando para móviles y luego escalé a pantallas más grandes, lo que hizo
+                                    que el CSS fuera más limpio y fácil de mantener.
+                                </p>
 
-            <article class="project" id="proyecto-2">
-                <h3 class="project__title">2. Aplicación del Clima</h3>
+                                <p class="project__paragraph">
+                                    También implementé un sistema de notificaciones cuando se agregan productos al
+                                    carrito,
+                                    transiciones suaves entre secciones y feedback visual en todos los botones
+                                    interactivos.
+                                </p>
 
-                <div class="project__content">
-                    <p class="project__paragraph">
-                        Una aplicación del clima interactiva que utiliza la <strong>API de OpenWeatherMap</strong>
-                        para mostrar información meteorológica en tiempo real. Este proyecto me permitió practicar
-                        el consumo de APIs, manejo de datos asíncronos y creación de interfaces dinámicas.
-                    </p>
+                                <p class="project__paragraph">
+                                    <a href="https://github.com/OliverN77/store" target="_blank"
+                                        class="project__link project__link--external">
+                                        <i class="fa-solid fa-link"></i>
+                                        Ver proyecto completo en GitHub
+                                    </a>.
+                                </p>
+                            </div>
+                        </article>
 
-                    <p class="project__paragraph">
-                        La aplicación permite a los usuarios buscar el clima de cualquier ciudad del mundo,
-                        mostrando temperatura actual, descripción del clima, humedad, velocidad del viento
-                        y un ícono representativo de las condiciones meteorológicas.
-                    </p>
+                        <article class="project" id="proyecto-2">
+                            <h3>2. Aplicación del Clima</h3>
 
-                    <h4 class="project__subtitle">Características Principales</h4>
+                            <div class="project__content">
+                                <p class="project__paragraph">
+                                    Una aplicación del clima interactiva que utiliza la <strong>API de
+                                        OpenWeatherMap</strong>
+                                    para mostrar información meteorológica en tiempo real. Este proyecto me permitió
+                                    practicar
+                                    el consumo de APIs, manejo de datos asíncronos y creación de interfaces dinámicas.
+                                </p>
 
-                    <div class="project__demo">
-                        <img src="img/js-quiz-game.jpg" alt="Weather App interfaz" class="project__demo-image">
-                    </div>
+                                <p class="project__paragraph">
+                                    La aplicación permite a los usuarios buscar el clima de cualquier ciudad del mundo,
+                                    mostrando temperatura actual, descripción del clima, humedad, velocidad del viento
+                                    y un ícono representativo de las condiciones meteorológicas.
+                                </p>
 
-                    <p class="project__paragraph">
-                        <a href="https://github.com/OliverN77/wheater-app" target="_blank" class="project__link project__link--external">
-                            <i class="fa-solid fa-link"></i>
-                            Ver Weather App en GitHub
-                        </a>
-                        — Este proyecto me enseñó a trabajar con APIs REST, promesas y async/await.
-                    </p>
+                                <h4 class="project__subtitle">Características Principales</h4>
 
-                    <p class="project__paragraph">
-                        El mayor desafío fue manejar los diferentes estados de la aplicación: cargando,
-                        éxito, error cuando la ciudad no existe, y problemas de conexión. Implementé
-                        mensajes de error claros y loaders para mejorar la experiencia del usuario.
-                    </p>
+                                <div class="project__demo">
+                                    <img src="img/card/weather-app.PNG" alt="Weather App interfaz"
+                                        class="project__demo-image">
+                                </div>
 
-                    <p class="project__paragraph">
-                        También aprendí sobre seguridad de APIs. Inicialmente tenía mi API key directamente
-                        en el código, pero después investigué sobre variables de entorno y mejores prácticas
-                        para proteger información sensible.
-                    </p>
+                                <p class="project__paragraph">
+                                    <a href="https://github.com/OliverN77/wheater-app" target="_blank"
+                                        class="project__link project__link--external">
+                                        <i class="fa-solid fa-link"></i>
+                                        Ver Weather App en GitHub
+                                    </a>
+                                    — Este proyecto me enseñó a trabajar con APIs REST, promesas y async/await.
+                                </p>
 
-                    <p class="project__paragraph">
-                        Aquí un ejemplo de cómo estructuré el código para obtener los datos:
-                    </p>
+                                <p class="project__paragraph">
+                                    El mayor desafío fue manejar los diferentes estados de la aplicación: cargando,
+                                    éxito, error cuando la ciudad no existe, y problemas de conexión. Implementé
+                                    mensajes de error claros y loaders para mejorar la experiencia del usuario.
+                                </p>
 
-                    <!-- Código de ejemplo -->
-                    <div class="project__code-block">
-                        <pre class="code-block__content"><code>/* Estructura de la petición:
+                                <p class="project__paragraph">
+                                    También aprendí sobre seguridad de APIs. Inicialmente tenía mi API key directamente
+                                    en el código, pero después investigué sobre variables de entorno y mejores prácticas
+                                    para proteger información sensible.
+                                </p>
+
+                                <p class="project__paragraph">
+                                    Aquí un ejemplo de cómo estructuré el código para obtener los datos:
+                                </p>
+
+                                <!-- Código de ejemplo -->
+                                <div class="project__code-block">
+                                    <div class="code-block__header">
+                                        <span class="code-block__lang">pseudocódigo</span>
+                                        <button class="code-block__copy" title="Copiar">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre class="code-block__content"><code>/* Estructura de la petición:
 1. Usuario ingresa nombre de ciudad
 2. Validar que el campo no esté vacío
 3. Mostrar loader mientras se obtienen datos
@@ -286,188 +420,213 @@
 7. Si es exitoso → actualizar interfaz con datos
 8. Mostrar temperatura, descripción e ícono
 */</code></pre>
-                    </div>
+                                </div>
 
-                    <!-- Aprendizajes -->
-                    <div class="project__bonus" id="aprendizajes-weather">
-                        <h4 class="project__bonus-title">⚡ Aprendizajes Clave</h4>
-                        <ul class="project__list">
-                            <li class="project__list-item">Consumo de APIs REST con Fetch</li>
-                            <li class="project__list-item">Manejo de Promesas y async/await</li>
-                            <li class="project__list-item">Gestión de estados (loading, error, success)</li>
-                            <li class="project__list-item">Validación de datos del usuario</li>
-                            <li class="project__list-item">Manejo de errores y feedback visual</li>
-                        </ul>
-                    </div>
+                                <!-- Aprendizajes -->
+                                <div class="project__bonus" id="aprendizajes-weather">
+                                    <h4 class="project__bonus-title">⚡ Aprendizajes Clave</h4>
+                                    <ul class="project__list">
+                                        <li class="project__list-item">Consumo de APIs REST con Fetch</li>
+                                        <li class="project__list-item">Manejo de Promesas y async/await</li>
+                                        <li class="project__list-item">Gestión de estados (loading, error, success)</li>
+                                        <li class="project__list-item">Validación de datos del usuario</li>
+                                        <li class="project__list-item">Manejo de errores y feedback visual</li>
+                                    </ul>
+                                </div>
 
-                    <p class="project__paragraph">
-                        Este proyecto fue un gran paso en mi comprensión de JavaScript asíncrono y me
-                        preparó para trabajar con APIs más complejas en proyectos futuros.
-                    </p>
-                </div>
-            </article>
+                                <p class="project__paragraph">
+                                    Este proyecto fue un gran paso en mi comprensión de JavaScript asíncrono y me
+                                    preparó para trabajar con APIs más complejas en proyectos futuros.
+                                </p>
+                            </div>
+                        </article>
 
-            <article class="project" id="proyecto-3">
-                <h3 class="project__title">3. Calculadora de Notas Académicas</h3>
+                        <article class="project" id="proyecto-3">
+                            <h3>3. Calculadora de Notas Académicas</h3>
 
-                <div class="project__content">
-                    <p class="project__paragraph">
-                        Una aplicación web práctica para calcular promedios de notas y determinar si un estudiante
-                        aprueba o reprueba. Construida con <strong>HTML, CSS y JavaScript</strong>, este proyecto
-                        me ayudó a practicar lógica de programación y validación de datos.
-                    </p>
+                            <div class="project__content">
+                                <p class="project__paragraph">
+                                    Una aplicación web práctica para calcular promedios de notas y determinar si un
+                                    estudiante
+                                    aprueba o reprueba. Construida con <strong>HTML, CSS y JavaScript</strong>, este
+                                    proyecto
+                                    me ayudó a practicar lógica de programación y validación de datos.
+                                </p>
 
-                    <p class="project__paragraph">
-                        La calculadora permite ingresar múltiples notas, calcula automáticamente el promedio,
-                        determina el estado (aprobado/reprobado) según un umbral definido, y muestra los
-                        resultados de manera clara y visual.
-                    </p>
+                                <p class="project__paragraph">
+                                    La calculadora permite ingresar múltiples notas, calcula automáticamente el
+                                    promedio,
+                                    determina el estado (aprobado/reprobado) según un umbral definido, y muestra los
+                                    resultados de manera clara y visual.
+                                </p>
 
-                    <h4 class="project__subtitle">Interfaz y Funcionalidad</h4>
+                                <h4 class="project__subtitle">Interfaz y Funcionalidad</h4>
 
-                    <div class="project__demo">
-                        <img src="img/todo-react-app.jpg" alt="Calculadora de notas" class="project__demo-image">
-                    </div>
+                                <div class="project__demo">
+                                    <img src="img/card/calculator.PNG" alt="Calculadora de notas"
+                                        class="project__demo-image">
+                                </div>
 
-                    <p class="project__paragraph">
-                        <a href="https://github.com/OliverN77/calculadora-nota" target="_blank" class="project__link project__link--external">
-                            <i class="fa-solid fa-link"></i>
-                            Ver Calculadora de Notas en GitHub
-                        </a>
-                        — Este proyecto me permitió practicar operaciones matemáticas y validaciones en JavaScript.
-                    </p>
+                                <p class="project__paragraph">
+                                    <a href="https://github.com/OliverN77/calculadora-nota" target="_blank"
+                                        class="project__link project__link--external">
+                                        <i class="fa-solid fa-link"></i>
+                                        Ver Calculadora de Notas en GitHub
+                                    </a>
+                                    — Este proyecto me permitió practicar operaciones matemáticas y validaciones en
+                                    JavaScript.
+                                </p>
 
-                    <p class="project__paragraph">
-                        Lo interesante de este proyecto fue implementar validaciones robustas. Tuve que asegurarme
-                        de que los usuarios solo pudieran ingresar números válidos, manejar casos como campos vacíos,
-                        y prevenir errores de división por cero.
-                    </p>
+                                <p class="project__paragraph">
+                                    Lo interesante de este proyecto fue implementar validaciones robustas. Tuve que
+                                    asegurarme
+                                    de que los usuarios solo pudieran ingresar números válidos, manejar casos como
+                                    campos
+                                    vacíos,
+                                    y prevenir errores de división por cero.
+                                </p>
 
-                    <!-- Funcionalidades -->
-                    <div class="project__bonus" id="funcionalidades-calc">
-                        <h4 class="project__bonus-title">⚡ Funcionalidades Principales</h4>
-                        <ul class="project__list">
-                            <li class="project__list-item">Agregar múltiples notas dinámicamente</li>
-                            <li class="project__list-item">Validación de datos numéricos</li>
-                            <li class="project__list-item">Cálculo automático de promedio</li>
-                            <li class="project__list-item">Determinación de estado (aprobado/reprobado)</li>
-                            <li class="project__list-item">Eliminar notas individuales</li>
-                            <li class="project__list-item">Reiniciar calculadora</li>
-                            <li class="project__list-item">Feedback visual con colores</li>
-                        </ul>
-                    </div>
+                                <!-- Funcionalidades -->
+                                <div class="project__bonus" id="funcionalidades-calc">
+                                    <h4 class="project__bonus-title">⚡ Funcionalidades Principales</h4>
+                                    <ul class="project__list">
+                                        <li class="project__list-item">Agregar múltiples notas dinámicamente</li>
+                                        <li class="project__list-item">Validación de datos numéricos</li>
+                                        <li class="project__list-item">Cálculo automático de promedio</li>
+                                        <li class="project__list-item">Determinación de estado (aprobado/reprobado)</li>
+                                        <li class="project__list-item">Eliminar notas individuales</li>
+                                        <li class="project__list-item">Reiniciar calculadora</li>
+                                        <li class="project__list-item">Feedback visual con colores</li>
+                                    </ul>
+                                </div>
 
-                    <p class="project__paragraph">
-                        Una característica que agregué fue el cambio de color del resultado según el estado:
-                        verde para aprobado y rojo para reprobado. Estos pequeños detalles visuales mejoran
-                        significativamente la experiencia del usuario.
-                    </p>
+                                <p class="project__paragraph">
+                                    Una característica que agregué fue el cambio de color del resultado según el estado:
+                                    verde para aprobado y rojo para reprobado. Estos pequeños detalles visuales mejoran
+                                    significativamente la experiencia del usuario.
+                                </p>
 
-                    <p class="project__paragraph">
-                        También implementé la capacidad de agregar y eliminar notas de forma dinámica,
-                        lo que implicó trabajar con arrays, métodos como push(), splice() y map(),
-                        y actualizar el DOM en tiempo real.
-                    </p>
+                                <p class="project__paragraph">
+                                    También implementé la capacidad de agregar y eliminar notas de forma dinámica,
+                                    lo que implicó trabajar con arrays, métodos como push(), splice() y map(),
+                                    y actualizar el DOM en tiempo real.
+                                </p>
 
-                    <p class="project__paragraph">
-                        Este proyecto, aunque simple en su concepto, me ayudó a entender mejor cómo
-                        estructurar aplicaciones interactivas y manejar el flujo de datos entre la
-                        interfaz y la lógica de JavaScript.
-                    </p>
+                                <p class="project__paragraph">
+                                    Este proyecto, aunque simple en su concepto, me ayudó a entender mejor cómo
+                                    estructurar aplicaciones interactivas y manejar el flujo de datos entre la
+                                    interfaz y la lógica de JavaScript.
+                                </p>
 
-                    <!-- Tweet Style Tip -->
-                    <div class="project__embed">
-                        <div class="tweet">
-                            <div class="tweet__header">
-                                <img src="img/avatar.jpg" alt="Oliver" class="tweet__avatar">
-                                <div class="tweet__user">
-                                    <span class="tweet__name">Oliver 💻🚀</span>
-                                    <span class="tweet__handle">@oliverdev</span>
-                                    <span class="tweet__separator">·</span>
-                                    <span class="tweet__badge">Consejo</span>
+                                <!-- Tweet Style Tip -->
+                                <div class="project__embed">
+                                    <div class="tweet">
+                                        <div class="tweet__header">
+                                            <img src="img/avatar.webp" alt="Oliver" class="tweet__avatar">
+                                            <div class="tweet__user">
+                                                <span class="tweet__name">Oliver 💻🚀</span>
+                                                <span class="tweet__handle">@oliverdev</span>
+                                                <span class="tweet__separator">·</span>
+                                                <span class="tweet__badge">Consejo</span>
+                                            </div>
+                                        </div>
+                                        <div class="tweet__content">
+                                            <p class="tweet__text">
+                                                🚀 #TipDesarrollo
+                                            </p>
+                                            <p class="tweet__text">
+                                                Cuando construyas proyectos, siempre piensa en la experiencia del
+                                                usuario.
+                                            </p>
+                                            <p class="tweet__text">
+                                                Validaciones, mensajes de error claros y feedback visual hacen la
+                                                diferencia
+                                                entre un proyecto amateur y uno profesional.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="tweet__content">
-                                <p class="tweet__text">
-                                    🚀 #TipDesarrollo
-                                </p>
-                                <p class="tweet__text">
-                                    Cuando construyas proyectos, siempre piensa en la experiencia del usuario.
-                                </p>
-                                <p class="tweet__text">
-                                    Validaciones, mensajes de error claros y feedback visual hacen la diferencia
-                                    entre un proyecto amateur y uno profesional.
-                                </p>
+                        </article>
+                    </section>
+
+                    <!-- Conclusiones Section -->
+                    <section class="article-summary" id="conclusiones">
+                        <h2 class="article-summary__heading">Conclusiones</h2>
+
+                        <div class="article-summary__content">
+                            <p class="article-summary__paragraph">
+                                Hoy conociste tres proyectos reales que construí para fortalecer mis habilidades
+                                como desarrollador web. Cada uno representa un desafío diferente y utiliza
+                                tecnologías fundamentales:
+                            </p>
+
+                            <ol class="article-summary__list">
+                                <li class="article-summary__item">Tienda Online - Diseño responsivo y manejo de estado
+                                    con
+                                    localStorage</li>
+                                <li class="article-summary__item">Weather App - Consumo de APIs y manejo de datos
+                                    asíncronos
+                                </li>
+                                <li class="article-summary__item">Calculadora de Notas - Lógica de programación y
+                                    validaciones
+                                </li>
+                            </ol>
+
+                            <p class="article-summary__paragraph">
+                                Si construyes estos proyectos (o tus propias versiones), saldrás del proceso con un
+                                conocimiento sólido de HTML, CSS, JavaScript, APIs REST, manejo de datos asíncronos
+                                y buenas prácticas de desarrollo front-end.
+                            </p>
+
+                            <p class="article-summary__paragraph">
+                                Si parece abrumador, no te estreses. Todos comenzamos desde cero. Toma un proyecto
+                                a la vez, resuelve un problema a la vez, y verás cómo todo empieza a tener sentido.
+                                Como dicen, <strong>¡el mejor momento para empezar es ahora!</strong>
+                            </p>
+
+                            <p class="article-summary__paragraph">
+                                Todos estos proyectos están disponibles en mi
+                                <a href="https://github.com/OliverN77" target="_blank"
+                                    class="article-summary__link">GitHub</a>
+                                para que puedas explorar el código, aprender de él y adaptarlo a tus propias ideas.
+                                Siéntete libre de hacer preguntas o compartir tus comentarios. ¡Buena suerte y
+                                diviértete
+                                programando! 💪
+                            </p>
+
+                            <p class="article-summary__paragraph article-summary__paragraph--social">
+                                <em>¿Quieres conectar?
+                                    <a href="https://github.com/OliverN77" target="_blank"
+                                        class="article-summary__link">Sígueme
+                                        en
+                                        GitHub</a>
+                                    donde comparto proyectos, código y mi progreso como desarrollador!</em>
+                            </p>
+
+                            <!-- Tags -->
+                            <div class="article-summary__tags">
+                                <a href="#" class="tag">#desarrollo-web</a>
+                                <a href="#" class="tag">#javascript</a>
+                                <a href="#" class="tag">#proyectos</a>
+                                <a href="#" class="tag">#portafolio</a>
+                                <a href="#" class="tag">#frontend</a>
+                            </div>
+
+                            <!-- Views -->
+                            <div class="article-summary__views">
+                                <i class="fa-solid fa-eye"></i>
+                                <span>1.2K vistas</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- Conclusiones Section -->
-        <section class="article-summary" id="conclusiones">
-            <h2 class="article-summary__heading">Conclusiones</h2>
-
-            <div class="article-summary__content">
-                <p class="article-summary__paragraph">
-                    Hoy conociste tres proyectos reales que construí para fortalecer mis habilidades
-                    como desarrollador web. Cada uno representa un desafío diferente y utiliza
-                    tecnologías fundamentales:
-                </p>
-
-                <ol class="article-summary__list">
-                    <li class="article-summary__item">Tienda Online - Diseño responsivo y manejo de estado con localStorage</li>
-                    <li class="article-summary__item">Weather App - Consumo de APIs y manejo de datos asíncronos</li>
-                    <li class="article-summary__item">Calculadora de Notas - Lógica de programación y validaciones</li>
-                </ol>
-
-                <p class="article-summary__paragraph">
-                    Si construyes estos proyectos (o tus propias versiones), saldrás del proceso con un
-                    conocimiento sólido de HTML, CSS, JavaScript, APIs REST, manejo de datos asíncronos
-                    y buenas prácticas de desarrollo front-end.
-                </p>
-
-                <p class="article-summary__paragraph">
-                    Si parece abrumador, no te estreses. Todos comenzamos desde cero. Toma un proyecto
-                    a la vez, resuelve un problema a la vez, y verás cómo todo empieza a tener sentido.
-                    Como dicen, <strong>¡el mejor momento para empezar es ahora!</strong>
-                </p>
-
-                <p class="article-summary__paragraph">
-                    Todos estos proyectos están disponibles en mi
-                    <a href="https://github.com/OliverN77" target="_blank" class="article-summary__link">GitHub</a>
-                    para que puedas explorar el código, aprender de él y adaptarlo a tus propias ideas.
-                    Siéntete libre de hacer preguntas o compartir tus comentarios. ¡Buena suerte y diviértete programando! 💪
-                </p>
-
-                <p class="article-summary__paragraph article-summary__paragraph--social">
-                    <em>¿Quieres conectar?
-                        <a href="https://github.com/OliverN77" target="_blank" class="article-summary__link">Sígueme en GitHub</a>
-                        donde comparto proyectos, código y mi progreso como desarrollador!</em>
-                </p>
-
-                <!-- Tags -->
-                <div class="article-summary__tags">
-                    <a href="#" class="tag">#desarrollo-web</a>
-                    <a href="#" class="tag">#javascript</a>
-                    <a href="#" class="tag">#proyectos</a>
-                    <a href="#" class="tag">#portafolio</a>
-                    <a href="#" class="tag">#frontend</a>
-                </div>
-
-                <!-- Views -->
-                <div class="article-summary__views">
-                    <i class="fa-solid fa-eye"></i>
-                    <span>1.2K vistas</span>
+                    </section>
                 </div>
             </div>
-        </section>
+        </div>
 
         <section class="related-articles">
-            <h2 class="related-articles__heading">Más contenido de este blog</h2>
-
-            <div class="related-articles__grid">
+            <div class="related-articles__container">
+                <h2 class="related-articles__heading">Más contenido de este blog</h2>
                 <article class="article-card">
                     <div class="article-card__content">
                         <h3 class="article-card__title">
@@ -488,10 +647,23 @@
                         </div>
                     </div>
                     <div class="article-card__image-wrapper">
-                        <img src="img/article-stairs.jpg" alt="10 Lecciones para Sobresalir"
-                            class="article-card__image">
+                        <img src="img/card-3.webp" alt="10 Lecciones para Sobresalir" class="article-card__image">
                     </div>
                 </article>
+
+                <div class="profile__newsletter">
+                    <div class="newsletter__header">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="newsletter__group">
+                            <h3>Suscríbete al newsletter.</h3>
+                            <span>Recibe nuevos artículos en tu bandeja de entrada.</span>
+                        </div>
+                    </div>
+                    <div class="input__group">
+                        <input type="text" placeholder="tu@ejemplo.com">
+                        <button type="submit">Suscribirse</button>
+                    </div>
+                </div>
 
                 <!-- Article Card 2 -->
                 <article class="article-card">
@@ -515,7 +687,7 @@
                         </div>
                     </div>
                     <div class="article-card__image-wrapper">
-                        <img src="img/article-teapot.jpg" alt="Pair-Programming" class="article-card__image">
+                        <img src="img/card-2.webp" alt="Pair-Programming" class="article-card__image">
                     </div>
                 </article>
 
@@ -539,23 +711,9 @@
                         </div>
                     </div>
                     <div class="article-card__image-wrapper">
-                        <img src="img/article-monitor.jpg" alt="Herramientas para Desarrolladores" class="article-card__image">
+                        <img src="img/card-4.webp" alt="Herramientas para Desarrolladores" class="article-card__image">
                     </div>
                 </article>
-
-                <div class="newsletter-card">
-                    <div class="newsletter-card__icon">
-                        <i class="fa-regular fa-envelope"></i>
-                    </div>
-                    <div class="newsletter-card__content">
-                        <h3 class="newsletter-card__title">Suscríbete al newsletter</h3>
-                        <p class="newsletter-card__description">Recibe nuevos artículos directamente en tu bandeja de entrada.</p>
-                        <form class="newsletter-card__form">
-                            <input type="email" placeholder="tu@ejemplo.com" class="newsletter-card__input" required>
-                            <button type="submit" class="newsletter-card__button">Suscribirse</button>
-                        </form>
-                    </div>
-                </div>
 
                 <article class="article-card">
                     <div class="article-card__content">
@@ -577,52 +735,56 @@
                         </div>
                     </div>
                     <div class="article-card__image-wrapper">
-                        <img src="img/article-laptop.jpg" alt="Mi Camino como Desarrollador" class="article-card__image">
+                        <img src="img/card-5.webp" alt="Mi Camino como Desarrollador" class="article-card__image">
                     </div>
                 </article>
+
+                <div class="profile__profile">
+                    <div class="profile__header">
+                        <div class="profile__logo">
+                            <i class="fa-brands fa-hashnode"></i>
+                        </div>
+                        <div class="profile__content">
+                            <h3>Oliver Nieto ⚡️</h3>
+                            <p>Técnico en Programación de Software enfocado en desarrollo web. Nivel considerable en
+                                HTML, CSS y PHP.
+                                Aprendiendo Node.js, JavaScript, Python y SQL. Objetivo: nivel A1 de inglés.
+                            </p>
+                            <span>9 artículos publicados</span>
+                        </div>
+                    </div>
+                    <div class="card__links">
+                        <a href="https://x.com/OliverN30678667" target="_blank">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://github.com/OliverN77" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://portfolio-theta-mocha-41.vercel.app/" target="_blank">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="https://hashnode.com/@olivernieto" target="_blank">
+                            <i class="fa-brands fa-hashnode"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
-
-        <div class="profile__profile">
-            <div class="profile__header">
-                <div class="profile__logo">
-                    <i class="fa-brands fa-hashnode"></i>
-                </div>
-                <div class="profile__content">
-                    <h3>Oliver Nieto ⚡️</h3>
-                    <p>Desarrollador web apasionado enfocado en crear experiencias modernas usando HTML, CSS, JavaScript,
-                        Node.js, PHP, Python y MySQL. Comparto mi aprendizaje y proyectos.</p>
-                    <span>3 proyectos publicados</span>
-                </div>
-            </div>
-            <div class="card__links">
-                <a href="https://github.com/OliverN77" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-globe"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-hashnode"></i>
-                </a>
-            </div>
-        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Oliver Nieto. ⚡️</p>
+        <p style="font-family: sans-serif;">&copy; <span style="font-family: var(--font-family);"> 2026 Oliver Nieto.
+                ⚡️</span></p>
         <nav>
             <ul>
-                <a href="#">
+                <a href="https://blog.anniebombanie.com/archive" target="_blank">
                     Archivo
                 </a>
-                <a href="https://hashnode.com/@privacy">
+                <a href="https://hashnode.com/@privacy" target="_blank">
                     Privacidad
                 </a>
-                <a href="https://hashnode.com/terms">
+                <a href="https://hashnode.com/terms" target="_blank">
                     Términos
                 </a>
             </ul>
@@ -631,13 +793,15 @@
             <a href="https://blog.anniebombanie.com/sitemap.xml"><i class="fa-solid fa-sitemap"></i>Sitemap</a>
             <a href="https://blog.anniebombanie.com/rss.xml"><i class="fa-solid fa-rss"></i>RSS</a>
         </div>
-        <div class="hasnode__link">
+        <div class="hashnode__link">
             <a href="https://hashnode.com/@olivernieto" target="_blank">
                 <i class="fa-brands fa-hashnode"></i>
-                <span>OliverNieto</span>
+                <span>hashnode</span>
             </a>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
 

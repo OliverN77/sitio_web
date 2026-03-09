@@ -86,6 +86,7 @@ window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (sidebar.classList.contains('active')) closeSidebar();
         if (searchModal.classList.contains('active')) closeSearchModal();
+        if (articleSidebar && articleSidebar.classList.contains('active')) closeToc();
     }
     // Atajo Ctrl+K: alterna el modal
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
@@ -264,3 +265,46 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
         applyTheme('system');
     }
 });
+
+// Funcionalidad de copiar código al portapapeles (card)
+document.querySelectorAll('.code-block__copy').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const code = btn.closest('.project__code-block').querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+            setTimeout(() => btn.innerHTML = '<i class="fa-regular fa-copy"></i>', 1500);
+        });
+    });
+});
+
+// Floating TOC (Table of Contents) — desktop 1025-1280px
+const tocToggle = document.getElementById('tocToggle');
+const tocClose = document.getElementById('tocClose');
+const tocOverlay = document.getElementById('tocOverlay');
+const articleSidebar = document.getElementById('articleSidebar');
+
+function openToc() {
+    articleSidebar.classList.add('active');
+    tocOverlay.classList.add('active');
+    tocToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeToc() {
+    articleSidebar.classList.remove('active');
+    tocOverlay.classList.remove('active');
+    tocToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+}
+
+if (tocToggle) tocToggle.addEventListener('click', openToc);
+if (tocClose) tocClose.addEventListener('click', closeToc);
+if (tocOverlay) tocOverlay.addEventListener('click', closeToc);
+
+// Close TOC when a link inside it is clicked
+if (articleSidebar) {
+    articleSidebar.querySelectorAll('.article-sidebar__link').forEach(link => {
+        link.addEventListener('click', closeToc);
+    });
+}
+

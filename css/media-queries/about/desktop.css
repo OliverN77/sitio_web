@@ -192,7 +192,7 @@
     .sidebar__toggle {
         align-items: center;
         background: none;
-        border: none;
+        border: .1rem solid var(--border-dark);
         border-radius: var(--radius-sm);
         color: var(--text-muted-dark);
         cursor: pointer;
@@ -253,7 +253,7 @@
     .sidebar__close {
         align-items: center;
         background: none;
-        border: none;
+        border: .1rem solid var(--border-dark);
         border-radius: var(--radius-sm);
         color: var(--text-muted-dark);
         cursor: pointer;
