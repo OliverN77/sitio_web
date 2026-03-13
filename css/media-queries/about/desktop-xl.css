@@ -571,7 +571,7 @@
 
     .modal__newsletter__form {
         align-items: center;
-        background: #181b20;
+        background: var(--bg-page-dark);
         border: 0.15rem solid #353a40;
         border-radius: var(--radius-lg);
         display: flex;
