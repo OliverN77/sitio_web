@@ -4,38 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsor</title>
+    <title>Post No Encontrado</title>
+    <link rel="icon" href="img/hashnode-brands-solid-full.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/pages/sponsor.css">
+    <link rel="stylesheet" href="css/themes/dark-theme.css">
+    <link rel="stylesheet" href="css/media-queries/sponsor/desktop-xl.css">
+    <link rel="stylesheet" href="css/media-queries/sponsor/desktop.css">
+    <link rel="stylesheet" href="css/media-queries/sponsor/tablet-lg.css">
+    <link rel="stylesheet" href="css/media-queries/sponsor/tablet.css">
+    <link rel="stylesheet" href="css/media-queries/sponsor/mobile-lg.css">
+    <link rel="stylesheet" href="css/media-queries/sponsor/mobile.css">
 </head>
 
 <body>
     <main class="error-page">
         <div class="error-page__container">
-            <h1 class="error-page__code">404</h1>
-            
+            <h1 class="error-page__code">
+                <span class="error-page__digit" data-color-index="0">4</span>
+                <span class="error-page__digit" data-color-index="1">0</span>
+                <span class="error-page__digit" data-color-index="2">4</span>
+            </h1>
+
             <h2 class="error-page__title">Página no encontrada</h2>
-            
+
             <p class="error-page__description">
                 La página que estás buscando no existe.
             </p>
-            
+
             <div class="error-page__actions">
-                <a href="index.html" class="error-page__button error-page__button--primary">
-                    <i class="fa-solid fa-house"></i>
-                    Ir al inicio
-                </a>
-                
-                <a href="#" class="error-page__button error-page__button--secondary">
-                    <i class="fa-solid fa-box-archive"></i>
-                    Ver archivo
+                <a href="index.html" class="error-page__button">
+                    Ir a Hashnode
                 </a>
             </div>
-            
-            <div class="error-page__footer">
-                <img src="img/hashnode-logo.svg" alt="Hashnode" class="error-page__logo">
+
+            <div class="hashnode__link">
+                <a href="https://hashnode.com/?utm_source=blog_404_page" target="_blank">
+                    <i class="fa-brands fa-hashnode"></i>
+                    <span>hashnode</span>
+                </a>
             </div>
         </div>
     </main>
+
+    <script src="/js/sponsor.js"></script>
+
 </body>
 
 </html>

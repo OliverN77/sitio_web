@@ -1,0 +1,265 @@
+/* =====================
+   MOBILE LG — 481px to 767px
+   ===================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    /* =====================
+   ERROR PAGE
+   ===================== */
+
+    .error-page {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        min-height: 100dvh;
+        padding-bottom: 31.5vh;
+    }
+
+    .error-page__container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        padding: 4rem 2rem;
+        text-align: center;
+    }
+
+    .error-page__code {
+        display: flex;
+        font-size: 9.6rem;
+        font-weight: 800;
+        gap: 0.4rem;
+        line-height: 1;
+        user-select: none;
+    }
+
+    .error-page__digit {
+        cursor: pointer;
+        display: inline-block;
+        transition: color 0.3s ease, transform 0.3s ease-in-out;
+    }
+
+    .error-page__digit:hover {
+        transform: scale(1.1) rotate(-10deg);
+    }
+
+    .error-page__digit:nth-child(1) {
+        color: #2d2f32;
+    }
+
+    .error-page__digit:nth-child(2) {
+        color: #2d2f32;
+    }
+
+    .error-page__digit:nth-child(3) {
+        color: #2d2f32;
+    }
+
+    .error-page__title {
+        color: var(--text-primary-dark);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 1rem;
+    }
+
+    .error-page__description {
+        color: var(--text-muted-dark);
+        font-size: var(--font-size-lg);
+        max-width: 38rem;
+    }
+
+    .error-page__actions {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0.8rem;
+    }
+
+    .error-page__button {
+        align-items: center;
+        border-radius: var(--radius-lg);
+        display: flex;
+        font-size: var(--font-size-md);
+        font-weight: 600;
+        gap: 0.8rem;
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        background-color: #155dfc;
+        color: #ffffff;
+        transition: background-color 0.2s ease;
+    }
+
+    .error-page__button:hover {
+        background-color: #1447e6;
+        transition: background-color 0.2s ease;
+    }
+
+    .hashnode__link {
+        margin-top: 3.5rem;
+        height: 100%;
+        width: 100%;
+    }
+
+    .hashnode__link a {
+        align-items: center;
+        color: #414549;
+        display: flex;
+        font-weight: 600;
+        gap: 0.8rem;
+        justify-content: center;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .hashnode__link a:hover {
+        color: var(--text-muted-dark);
+        transition: color 0.2s;
+    }
+
+    .hashnode__link i {
+        font-size: 2.5rem;
+    }
+
+    .hashnode__link span {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+
+    .error-page__logo {
+        height: 2.4rem;
+    }
+
+    /* =====================
+   DIGIT ANIMATIONS
+   ===================== */
+
+    @keyframes digit-spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes digit-bounce {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        30% {
+            transform: translateY(-5rem);
+        }
+
+        60% {
+            transform: translateY(-2.5rem);
+        }
+    }
+
+    @keyframes digit-shake {
+
+        0%,
+        100% {
+            transform: translateX(0) rotate(0deg);
+        }
+
+        20% {
+            transform: translateX(-1.5rem) rotate(-6deg);
+        }
+
+        40% {
+            transform: translateX(1.5rem) rotate(6deg);
+        }
+
+        60% {
+            transform: translateX(-1rem) rotate(-3deg);
+        }
+
+        80% {
+            transform: translateX(1rem) rotate(3deg);
+        }
+    }
+
+    @keyframes digit-pop {
+        0% {
+            transform: scale(1);
+        }
+
+        40% {
+            transform: scale(1.5);
+        }
+
+        70% {
+            transform: scale(0.9);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes digit-flip {
+        0% {
+            transform: rotateY(0deg);
+        }
+
+        50% {
+            transform: rotateY(180deg);
+        }
+
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+
+    @keyframes digit-wobble {
+
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+
+        20% {
+            transform: rotate(-20deg);
+        }
+
+        50% {
+            transform: rotate(20deg);
+        }
+
+        75% {
+            transform: rotate(-10deg);
+        }
+    }
+
+    .digit-anim-spin {
+        animation: digit-spin 0.6s ease forwards;
+    }
+
+    .digit-anim-bounce {
+        animation: digit-bounce 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+    }
+
+    .digit-anim-shake {
+        animation: digit-shake 0.55s ease forwards;
+    }
+
+    .digit-anim-pop {
+        animation: digit-pop 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+    }
+
+    .digit-anim-flip {
+        animation: digit-flip 0.65s ease forwards;
+    }
+
+    .digit-anim-wobble {
+        animation: digit-wobble 0.55s ease forwards;
+    }
+}

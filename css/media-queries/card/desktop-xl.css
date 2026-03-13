@@ -638,6 +638,10 @@
    ===================== */
 
     main {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         padding: 3.2rem 3.6rem;
     }
 
@@ -646,6 +650,8 @@
         background-color: var(--bg-surface-dark);
         border: 0.1rem solid var(--border-dark);
         border-radius: var(--radius-lg);
+        max-width: 150rem;
+        width: 100%;
     }
 
     .toc__toggle {
