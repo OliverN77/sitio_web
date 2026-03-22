@@ -439,10 +439,6 @@
         padding-top: 1rem;
     }
 
-    .modal__newsletter__submit:hover {
-        background-color: #4e86ff;
-    }
-
     /* =====================
    MODAL DE NEWSLETTER
    ===================== */
@@ -666,19 +662,19 @@
 
     .profile__content h3 {
         color: var(--text-primary-dark);
-        font-size: var(--font-size-md);
+        font-size: 1.8rem;
     }
 
     .profile__content p {
         color: var(--text-muted-dark);
         font-family: var(--font-family);
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-md);
         line-height: 1.5;
     }
 
     .profile__content span {
         color: var(--text-muted-dark);
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-md);
         margin-top: 0.8rem;
     }
 
@@ -750,13 +746,13 @@
     .newsletter__header h3 {
         color: var(--text-primary-dark);
         font-family: var(--font-family);
-        font-size: var(--font-size-md);
+        font-size: 1.8rem;
         margin: 0 0 0.4rem;
     }
 
     .newsletter__group span {
         color: var(--text-muted-dark);
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-md);
     }
 
     .input__group {
