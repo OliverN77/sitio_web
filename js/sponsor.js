@@ -21,7 +21,7 @@ document.querySelectorAll('.error-page__digit').forEach((digit) => {
         digit.style.color = COLORS[nextIndex];
 
         digit.classList.remove(...ANIMATIONS);
-        void digit.offsetWidth; // force reflow so animation restarts
+        void digit.offsetWidth;
         const anim = ANIMATIONS[Math.floor(Math.random() * ANIMATIONS.length)];
         digit.classList.add(anim);
 

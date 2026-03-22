@@ -1,4 +1,5 @@
 // Variables y referencias a elementos del DOM
+const articleSidebar = document.getElementById('articleSidebar');
 const header = document.querySelector('.header__header');
 const newsletterCloseBtn = document.querySelector('.modal__newsletter__close');
 const newsletterInput = document.querySelector('.modal__newsletter__input');
@@ -16,6 +17,11 @@ const sidebarToggle = document.querySelector('.sidebar__toggle');
 const themeLink = document.getElementById('theme-stylesheet');
 const themeItems = document.querySelectorAll('.ui__menu li');
 const toggleIcon = document.querySelector('.ui__toggle i');
+const tocClose = document.getElementById('tocClose');
+const tocOverlay = document.getElementById('tocOverlay');
+const tocToggle = document.getElementById('tocToggle');
+
+let allCards = [];
 let lastScroll = 0;
 
 // Sidebar
@@ -99,20 +105,34 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-// Búsqueda en tiempo real
-const allCards = [...document.querySelectorAll('.posts__grid__card, .post__list__card')].map(card => {
-    const a = card.querySelector('a');
-    const titleEl = card.querySelector('h3') || card.querySelector('h2');
-    const imgEl = card.querySelector('img');
-    const dateEl = card.querySelector('.card__info span') || card.querySelector('.post__info span');
-    return {
-        title: titleEl?.textContent.trim() || '',
-        href: a?.getAttribute('href') || '#',
-        img: imgEl?.getAttribute('src') || '',
-        imgAlt: imgEl?.getAttribute('alt') || '',
-        date: dateEl?.textContent.trim() || '',
-    };
-});
+// Generar allCards desde los elementos de la página actual
+function generateAllCards() {
+    const cards = [...document.querySelectorAll('.posts__grid__card, .post__list__card')].map(card => {
+        const a = card.querySelector('a');
+        const titleEl = card.querySelector('h3') || card.querySelector('h2');
+        const imgEl = card.querySelector('img');
+        const dateEl = card.querySelector('.card__info span') || card.querySelector('.post__info span');
+        return {
+            title: titleEl?.textContent.trim() || '',
+            href: a?.getAttribute('href') || '#',
+            img: imgEl?.getAttribute('src') || '',
+            imgAlt: imgEl?.getAttribute('alt') || '',
+            date: dateEl?.textContent.trim() || '',
+        };
+    });
+    
+    // Si se generaron tarjetas, guardar en localStorage
+    if (cards.length > 0) {
+        localStorage.setItem('allCards', JSON.stringify(cards));
+        return cards;
+    }
+    
+    // Si no hay tarjetas en esta página, restaurar desde localStorage
+    const saved = localStorage.getItem('allCards');
+    return saved ? JSON.parse(saved) : [];
+}
+
+allCards = generateAllCards();
 
 function renderSearchResults(query) {
     searchBody.innerHTML = '';
@@ -276,12 +296,6 @@ document.querySelectorAll('.code-block__copy').forEach(btn => {
         });
     });
 });
-
-// Floating TOC (Table of Contents) — desktop 1025-1280px
-const tocToggle = document.getElementById('tocToggle');
-const tocClose = document.getElementById('tocClose');
-const tocOverlay = document.getElementById('tocOverlay');
-const articleSidebar = document.getElementById('articleSidebar');
 
 function openToc() {
     articleSidebar.classList.add('active');
