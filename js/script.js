@@ -321,4 +321,3 @@ if (articleSidebar) {
         link.addEventListener('click', closeToc);
     });
 }
-

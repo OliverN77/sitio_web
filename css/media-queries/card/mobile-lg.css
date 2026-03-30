@@ -74,7 +74,7 @@
 
     h1 {
         color: var(--text-primary-dark);
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 700;
     }
 
@@ -469,8 +469,9 @@
         padding: 4.8rem 3.2rem 3.2rem;
     }
 
-    .hero__container>h1 {
-        font-size: 3rem;
+    .hero__container>h2 {
+        color: var(--text-primary-dark);
+        font-size: 2.4rem;
         text-align: center;
         margin: 0 0 1.2rem;
         max-width: 80rem;
@@ -1178,116 +1179,7 @@
     }
 
     /* =====================
-   NEWSLETTER CARD (related)
-   ===================== */
-
-    .profile__newsletter {
-        background-color: var(--bg-surface-dark);
-        border: .1rem solid var(--border-dark);
-        border-radius: var(--radius-lg);
-        display: flex;
-        flex-direction: column;
-        gap: 1.6rem;
-        justify-content: center;
-        padding: 2rem;
-    }
-
-    .newsletter__header {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        gap: 1.2rem;
-    }
-
-    .newsletter__header i {
-        align-items: center;
-        border: .1rem solid var(--border-dark);
-        border-radius: 50%;
-        color: var(--text-primary-dark);
-        display: flex;
-        font-size: 2rem;
-        height: 4.8rem;
-        justify-content: center;
-        width: 4.8rem;
-    }
-
-    .newsletter__group {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .newsletter__header h3 {
-        color: var(--text-primary-dark);
-        font-family: var(--font-family);
-        font-size: var(--font-size-md);
-        margin: 0 0 0.4rem;
-    }
-
-    .newsletter__group span {
-        color: var(--text-muted-dark);
-        font-size: var(--font-size-xs);
-    }
-
-    .input__group {
-        align-items: center;
-        background-color: var(--bg-page-dark);
-        border: .1rem solid var(--border-dark);
-        border-radius: 0.8rem;
-        display: flex;
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-    }
-
-    .input__group input {
-        background: transparent;
-        border: none;
-        color: var(--text-primary-dark);
-        flex: 1;
-        font-family: var(--font-family);
-        font-size: var(--font-size-md);
-        outline: none;
-        padding: 1.2rem 1.4rem;
-    }
-
-    .input__group input::placeholder {
-        color: #6b7280;
-    }
-
-    .input__group input:not(:placeholder-shown)~button {
-        background-color: #0062a6;
-        opacity: 1;
-        z-index: 1;
-    }
-
-    .input__group input:not(:placeholder-shown)~button:hover {
-        background-color: #035c99;
-    }
-
-    .input__group input:placeholder-shown~button {
-        cursor: default;
-    }
-
-    .input__group button {
-        background-color: #114368;
-        border: none;
-        border-radius: var(--radius-sm);
-        color: var(--text-primary-dark);
-        font-family: var(--font-family);
-        font-size: var(--font-size-md);
-        font-weight: 600;
-        margin: 0.4rem;
-        opacity: 0.5;
-        padding: 0.8rem 1.6rem;
-        position: relative;
-        transition: background-color 0.3s ease, opacity 0.3s ease;
-        white-space: nowrap;
-        z-index: 1;
-    }
-
-    /* =====================
-   PROFILE CARD (bottom)
+   PROFILE CARD
    ===================== */
 
     .profile__profile {

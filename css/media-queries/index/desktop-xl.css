@@ -816,6 +816,12 @@
         padding: 2rem;
     }
 
+    .profile__profile:hover {
+        background-color: var(--bg-page-dark);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
     .profile__header {
         align-items: start;
         display: flex;
@@ -896,6 +902,12 @@
         gap: 1.6rem;
         justify-content: center;
         padding: 2rem;
+    }
+
+    .profile__newsletter:hover {
+        background-color: var(--bg-page-dark);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
 
     .newsletter__header {
