@@ -13,15 +13,16 @@
         display: flex;
         justify-content: center;
         padding: 1.6rem 6.4rem;
-        position: sticky;
+        position: fixed;
         top: 0;
-        transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+        transition: transform 0.3s;
+        width: 100%;
         z-index: 2;
     }
 
     .header--hide {
         transform: translateY(-100%);
-        transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+        transition: transform 0.3s;
     }
 
     .header__wrapper {
@@ -220,7 +221,7 @@
         right: 0;
         top: 0;
         transform: translateX(100%);
-        transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+        transition: transform 0.3s;
         width: 36rem;
         z-index: 4;
     }
@@ -450,7 +451,7 @@
    ===================== */
 
     main {
-        padding: 3.2rem 3.6rem;
+        padding: 10rem 3.6rem 0;
     }
 
 
@@ -578,10 +579,10 @@
         position: fixed;
         top: 50%;
         transform: translate(-50%, -50%) scale(0.96);
-        transition: max-height 0.3s cubic-bezier(.4, 0, .2, 1),
-            opacity 0.3s cubic-bezier(.4, 0, .2, 1),
-            transform 0.3s cubic-bezier(.4, 0, .2, 1),
-            padding 0.3s cubic-bezier(.4, 0, .2, 1);
+        transition: max-height 0.3s,
+            opacity 0.3s,
+            transform 0.3s,
+            padding 0.3s;
         width: calc(100% - 4.8rem);
         z-index: 102;
     }
