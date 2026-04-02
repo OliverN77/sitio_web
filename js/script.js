@@ -315,9 +315,30 @@ if (tocToggle) tocToggle.addEventListener('click', openToc);
 if (tocClose) tocClose.addEventListener('click', closeToc);
 if (tocOverlay) tocOverlay.addEventListener('click', closeToc);
 
-// Close TOC when a link inside it is clicked
 if (articleSidebar) {
     articleSidebar.querySelectorAll('.article-sidebar__link').forEach(link => {
         link.addEventListener('click', closeToc);
     });
 }
+
+// Activate map ticks on scroll
+const sidebarSections = [...document.querySelectorAll('.article-sidebar__link')].map(link => link.getAttribute('href')?.substring(1)).filter(id => id);
+const mapTicks = document.querySelectorAll('.article-sidebar__map-tick');
+const sidebarLinks = document.querySelectorAll('.article-sidebar__link');
+const mapObserver = new IntersectionObserver(e => {
+    e.forEach(en => {
+        if (en.isIntersecting) {
+            const i = sidebarSections.indexOf(en.target.id);
+            mapTicks.forEach(t => t.classList.remove('article-sidebar__map-tick--active'));
+            sidebarLinks.forEach(l => l.classList.remove('article-sidebar__link--active'));
+            if (i > -1 && mapTicks[i]) {
+                mapTicks[i].classList.add('article-sidebar__map-tick--active');
+                if (sidebarLinks[i]) sidebarLinks[i].classList.add('article-sidebar__link--active');
+            }
+        }
+    });
+}, { threshold: 0.1 });
+sidebarSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) mapObserver.observe(el);
+});

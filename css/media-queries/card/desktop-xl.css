@@ -217,7 +217,6 @@
         font-size: 1.28rem;
     }
 
-    .ui__newsletter,
     .ui__write {
         align-items: center;
         border: none;
@@ -229,20 +228,6 @@
         justify-content: center;
         padding: 0.8rem 1.6rem;
         transition: background-color 0.3s ease;
-    }
-
-    .ui__newsletter {
-        background-color: #4e86ff;
-    }
-
-    .ui__newsletter:hover {
-        background-color: #487bf0;
-    }
-
-    .ui__newsletter i,
-    .ui__newsletter span {
-        color: var(--text-primary-dark);
-        font-size: var(--font-size-sm);
     }
 
     .ui__write {
@@ -509,132 +494,6 @@
     }
 
     /* =====================
-   MODAL NEWSLETTER
-   ===================== */
-
-    .modal__newsletter {
-        align-items: flex-start;
-        background: transparent;
-        display: none;
-        height: 100vh;
-        justify-content: flex-end;
-        position: fixed;
-        top: 6rem;
-        width: 100vw;
-        z-index: 3;
-    }
-
-    .modal__newsletter.active {
-        display: flex;
-    }
-
-    .modal__newsletter__dialog {
-        background: var(--bg-page-dark);
-        border: 0.1rem solid var(--border-dark);
-        border-radius: 1rem;
-        box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.25);
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        padding: 1.2rem;
-        position: relative;
-        right: 20rem;
-        width: 32rem;
-    }
-
-    .modal__newsletter__header {
-        align-items: flex-start;
-        display: flex;
-        gap: 2rem;
-        justify-content: space-between;
-        margin-bottom: 0.6rem;
-    }
-
-    .modal__newsletter__title {
-        color: var(--text-primary-dark);
-        font-size: var(--font-size-md);
-        font-weight: 600;
-        margin-bottom: 0.4rem;
-    }
-
-    .modal__newsletter__desc {
-        color: var(--text-muted-dark);
-        font-size: var(--font-size-md);
-    }
-
-    .modal__newsletter__icon {
-        color: var(--text-muted-dark);
-        font-size: 1.8rem;
-        margin-left: 0;
-        padding: 0 1rem;
-        position: relative;
-    }
-
-    .modal__newsletter__form {
-        align-items: center;
-        background: var(--bg-page-dark);
-        border: 0.15rem solid #353a40;
-        border-radius: var(--radius-lg);
-        display: flex;
-        gap: 0.5rem;
-        padding: 0.6rem;
-    }
-
-    .modal__newsletter__form:focus-within {
-        box-shadow: 0 0 0 0.1rem rgba(255, 255, 255, 0.08),
-            0 0.4rem 2.4rem rgba(0, 0, 0, 0.4);
-    }
-
-    .modal__newsletter__input {
-        background: transparent;
-        border: none;
-        color: var(--text-primary-dark);
-        flex: 1;
-        font-size: var(--font-size-md);
-        outline: none;
-        padding: 1.2rem;
-        width: 100%;
-    }
-
-    .modal__newsletter__input::placeholder {
-        color: var(--text-muted-dark);
-        opacity: 0.7;
-    }
-
-    .modal__newsletter__input:not(:placeholder-shown)~.modal__newsletter__submit {
-        background: #4e86ff;
-        opacity: 1;
-        z-index: 1;
-    }
-
-    .modal__newsletter__input:not(:placeholder-shown)~.modal__newsletter__submit:hover {
-        background-color: #355392;
-    }
-
-    .modal__newsletter__input:placeholder-shown~.modal__newsletter__submit {
-        cursor: default;
-    }
-
-    .modal__newsletter__submit {
-        background: #355392;
-        border: none;
-        border-radius: var(--radius-sm);
-        color: var(--text-primary-dark);
-        font-size: var(--font-size-md);
-        font-weight: 500;
-        margin: 0.4rem;
-        opacity: 0.5;
-        padding: .8rem 1.8rem;
-        position: relative;
-        transition: background 0.3s ease, opacity 0.3s ease;
-        z-index: 1;
-    }
-
-    .modal__newsletter__submit:hover {
-        background-color: #4e86ff;
-    }
-
-    /* =====================
    MAIN
    ===================== */
 
@@ -719,15 +578,83 @@
     }
 
     .article-sidebar {
-        align-self: flex-start;
-        flex-shrink: 0;
-        margin-bottom: 20rem;
-        margin-top: 10rem;
-        overflow-y: auto;
-        padding: 2.4rem 1.6rem;
-        position: sticky;
-        top: 8rem;
+        cursor: pointer;
+        overflow: hidden;
+        padding: 2rem 1.4rem;
         width: 22rem;
+    }
+
+    .article-sidebar-nav__container {
+        position: absolute;
+        height: 700rem;
+    }
+
+    .article-sidebar__nav, .article-sidebar__map {
+        position: sticky;
+        top: 15rem;
+    }
+
+    .article-sidebar__header {
+        display: none;
+    }
+
+    .article-sidebar__map {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        max-height: 42rem;
+        opacity: 1;
+        overflow: hidden;
+        padding: 0.8rem 0;
+        transition: opacity 0.2s ease, max-height 0.2s ease, padding 0.2s ease;
+    }
+
+    .article-sidebar__map-line {
+        align-items: flex-start;
+        border-left: 0.2rem solid var(--border-dark);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-left: 0.8rem;
+    }
+
+    .article-sidebar__map-tick {
+        background-color: var(--border-dark);
+        border-radius: 1px;
+        display: block;
+        height: 0.15rem;
+        transition: width 0.2s ease, background-color 0.2s ease;
+        width: 1rem;
+    }
+
+    .article-sidebar__map-tick--active {
+        background-color: var(--text-primary-dark);
+        width: 3rem;
+    }
+
+    /* ─── Navegación (visible en hover) ─── */
+    .article-sidebar__nav {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        transition: opacity 0.2s ease, max-height 0.2s ease;
+        white-space: nowrap;
+    }
+
+    /* Ocultar mapa y mostrar navegación al hover ─── */
+    .article-sidebar:has(:hover) .article-sidebar__map,
+    .article-sidebar:has(:focus-within) .article-sidebar__map {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+    }
+
+    .article-sidebar:has(:hover) .article-sidebar__nav,
+    .article-sidebar:has(:focus-within) .article-sidebar__nav {
+        max-height: 42rem;
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .article-sidebar__span {
@@ -735,11 +662,11 @@
     }
 
     .article-sidebar__title {
-        color: var(--text-muted-dark);
+        color: var(--text-primary-dark);
         font-size: var(--font-size-xs);
         font-weight: 700;
         letter-spacing: 0.08em;
-        margin-bottom: 1.2rem;
+        margin: 0 0 1.2rem 0;
         text-transform: uppercase;
     }
 
@@ -748,6 +675,8 @@
         flex-direction: column;
         gap: 0.2rem;
         list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
     .article-sidebar__item {
@@ -758,14 +687,14 @@
     .article-sidebar__link {
         border-radius: var(--radius-sm);
         color: var(--text-muted-dark);
-        font-size: var(--font-size-md);
-        padding: 0.4rem 0.6rem;
+        font-size: var(--font-size-sm);
+        padding: 0.3rem 0.6rem;
         text-decoration: none;
-        transition: color 0.2s ease, background-color 0.2s ease;
+        transition: color 0.2s ease;
     }
 
-    .article-sidebar__link:hover {
-        background-color: var(--bg-surface-dark);
+    .article-sidebar__link:hover,
+    .article-sidebar__link--active {
         color: var(--text-primary-dark);
     }
 
@@ -776,6 +705,7 @@
     .article-sidebar__sublist {
         display: flex;
         flex-direction: column;
+        gap: 0.2rem;
         list-style: none;
         padding-left: 1rem;
     }
@@ -1161,8 +1091,9 @@
     }
 
     .tag:hover {
-        background-color: var(--bg-surface-dark);
-        color: var(--text-primary-dark);
+        border-color: #4e86ff;
+        color: #4e86ff;
+        transition: border-color 0.2s, color 0.2s;
     }
 
     .article-summary__views {
@@ -1215,7 +1146,7 @@
     }
 
     .article-card:hover {
-        background-color: var(--bg-page-dark);
+        border-color: var(--text-muted-dark);
     }
 
     .article-card p {
@@ -1240,11 +1171,6 @@
     .article-card__link {
         color: var(--text-primary-dark);
         text-decoration: none;
-    }
-
-    .article-card__link:hover {
-        text-decoration: underline;
-        text-underline-offset: 0.3rem;
     }
 
     .article-card__excerpt {
@@ -1287,84 +1213,96 @@
     .profile__profile {
         background-color: var(--bg-surface-dark);
         border: .1rem solid var(--border-dark);
-        border-radius: var(--radius-lg);
+        border-radius: 1.8rem;
         display: flex;
         flex-direction: column;
-        gap: 1.6rem;
+        gap: 2rem;
+        min-height: 27rem;
+        overflow: hidden;
         padding: 2rem;
+        position: relative;
+        text-align: center;
+        transition: border-color 0.1s ease;
+    }
+
+    .profile__profile:hover {
+        border-color: var(--text-muted-dark);
     }
 
     .profile__header {
-        align-items: start;
+        align-items: center;
         display: flex;
-        gap: 1.6rem;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .profile__logo {
         align-items: center;
-        border: .1rem solid var(--border-dark);
+        background-color: var(--bg-page-dark);
         border-radius: 50%;
         color: var(--text-primary-dark);
         display: flex;
-        font-size: 2.4rem;
+        font-size: 2rem;
+        height: 4.8rem;
         justify-content: center;
-        min-height: 5.6rem;
-        min-width: 5.6rem;
+        width: 4.8rem;
     }
 
     .profile__content {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 60ch;
     }
 
     .profile__content h3 {
         color: var(--text-primary-dark);
-        font-size: var(--font-size-md);
+        font-size: 1.6rem;
+        margin: 0 0 0 4px;
     }
 
     .profile__content p {
-        color: var(--text-primary-dark);
+        color: var(--text-muted-dark);
         font-family: var(--font-family);
-        font-size: var(--font-size-lg);
-        line-height: 1.5;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        text-align: justify;
     }
 
     .profile__content span {
         color: var(--text-muted-dark);
-        font-size: var(--font-size-xs);
-        margin-top: 0.8rem;
+        font-size: 1.5rem;
+        margin-top: 0;
     }
 
     .card__links {
         align-items: center;
-        border-top: .1rem solid var(--border-dark);
         display: flex;
         flex-direction: row;
-        gap: 1.2rem;
-        justify-content: start;
-        padding: 1.6rem 0 0;
+        gap: 1.5rem;
+        justify-content: center;
+        padding: 0;
     }
 
     .card__links a {
         align-items: center;
-        border: .1rem solid var(--border-dark);
-        border-radius: 0.8rem;
         color: var(--text-muted-dark);
         display: flex;
-        font-size: var(--font-size-lg);
-        height: 3.6rem;
+        font-size: 1.5rem;
+        height: auto;
         justify-content: center;
+        opacity: 0.88;
         text-decoration: none;
-        transition: color 0.3s ease;
-        width: 3.6rem;
+        transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+        width: auto;
     }
 
     .card__links a:hover {
-        background-color: var(--bg-surface-dark);
         color: var(--text-primary-dark);
+        opacity: 1;
     }
-
 
     /* =====================
    FOOTER

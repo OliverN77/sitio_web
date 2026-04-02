@@ -61,10 +61,6 @@
                     </ul>
                 </div>
 
-                <button class="ui__newsletter">
-                    <i class="fa-regular fa-envelope"></i>
-                    <span>Suscribirse</span>
-                </button>
                 <button onclick="window.open('https://hashnode.com/create/story', '_blank');" class="ui__write">
                     <i class="fa-solid fa-pen"></i>
                     <span>Escribir</span>
@@ -88,25 +84,6 @@
                 <div class="modal__search__body">
 
                 </div>
-            </div>
-        </div>
-
-        <!-- Modal flotante de newsletter -->
-        <div id="newsletterModal" class="modal__newsletter">
-            <div class="modal__newsletter__dialog">
-                <div class="modal__newsletter__header">
-                    <div class="modal__newsletter__text">
-                        <div class="modal__newsletter__title">Suscríbete</div>
-                        <div class="modal__newsletter__desc">Recibe las nuevas publicaciones.</div>
-                    </div>
-                    <div class="modal__newsletter__icon">
-                        <i class="fa-regular fa-envelope"></i>
-                    </div>
-                </div>
-                <form class="modal__newsletter__form">
-                    <input type="email" class="modal__newsletter__input" placeholder="you@example.com" />
-                    <button type="submit" class="modal__newsletter__submit">Suscribirse</button>
-                </form>
             </div>
         </div>
 
@@ -156,7 +133,8 @@
                 <img src="img/card-1.webp" alt="Proyectos de desarrollo web">
             </section>
 
-            <button id="tocToggle" class="toc__toggle" aria-label="Abrir tabla de contenidos" aria-expanded="false" aria-controls="articleSidebar">
+            <button id="tocToggle" class="toc__toggle" aria-label="Abrir tabla de contenidos" aria-expanded="false"
+                aria-controls="articleSidebar">
                 <i class="fa-solid fa-bars-staggered"></i>
                 <span>Contents</span>
             </button>
@@ -170,51 +148,64 @@
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
-                    <nav class="article-sidebar__nav">
-                        <h2 class="article-sidebar__title">EN ESTA PÁGINA</h2>
-                        <ul class="article-sidebar__list">
-                            <li class="article-sidebar__item">
-                                <a href="#los-tres-proyectos" class="article-sidebar__link">Los Tres Proyectos</a>
-                            </li>
 
-                            <li class="article-sidebar__item article-sidebar__item--nested">
-                                <a href="#proyecto-1" class="article-sidebar__link">1. Tienda Online Responsiva</a>
-                                <ul class="article-sidebar__sublist">
-                                    <li class="article-sidebar__item article-sidebar__item--bonus">
-                                        <span class="article-sidebar__icon">⚡</span>
-                                        <a href="#tecnologias-store" class="article-sidebar__link">Tecnologías
-                                            Utilizadas</a>
-                                    </li>
-                                </ul>
-                            </li>
+                    <div class="article-sidebar-nav__container">
 
-                            <li class="article-sidebar__item article-sidebar__item--nested">
-                                <a href="#proyecto-2" class="article-sidebar__link">2. Aplicación del Clima</a>
-                                <ul class="article-sidebar__sublist">
-                                    <li class="article-sidebar__item article-sidebar__item--bonus">
-                                        <span class="article-sidebar__icon">⚡</span>
-                                        <a href="#aprendizajes-weather" class="article-sidebar__link">Aprendizajes
-                                            Clave</a>
-                                    </li>
-                                </ul>
-                            </li>
+                        <div class="article-sidebar__map" aria-hidden="true">
+                            <span class="article-sidebar__map-line">
+                                <span class="article-sidebar__map-tick"></span>
+                                <span class="article-sidebar__map-tick article-sidebar__map-tick--active"></span>
+                                <span class="article-sidebar__map-tick"></span>
+                                <span class="article-sidebar__map-tick"></span>
+                                <span class="article-sidebar__map-tick"></span>
+                            </span>
+                        </div>
+                        <nav class="article-sidebar__nav">
+                            <h2 class="article-sidebar__title">EN ESTA PÁGINA</h2>
+                            <ul class="article-sidebar__list">
+                                <li class="article-sidebar__item">
+                                    <a href="#los-tres-proyectos" class="article-sidebar__link">Los Tres Proyectos</a>
+                                </li>
 
-                            <li class="article-sidebar__item article-sidebar__item--nested">
-                                <a href="#proyecto-3" class="article-sidebar__link">3. Calculadora de Notas</a>
-                                <ul class="article-sidebar__sublist">
-                                    <li class="article-sidebar__item article-sidebar__item--bonus">
-                                        <span class="article-sidebar__icon">⚡</span>
-                                        <a href="#funcionalidades-calc"
-                                            class="article-sidebar__link">Funcionalidades</a>
-                                    </li>
-                                </ul>
-                            </li>
+                                <li class="article-sidebar__item article-sidebar__item--nested">
+                                    <a href="#proyecto-1" class="article-sidebar__link">1. Tienda Online Responsiva</a>
+                                    <ul class="article-sidebar__sublist">
+                                        <li class="article-sidebar__item article-sidebar__item--bonus">
+                                            <span class="article-sidebar__icon">⚡</span>
+                                            <a href="#tecnologias-store" class="article-sidebar__link">Tecnologías
+                                                Utilizadas</a>
+                                        </li>
+                                    </ul>
+                                </li>
 
-                            <li class="article-sidebar__item">
-                                <a href="#conclusiones" class="article-sidebar__link">Conclusiones</a>
-                            </li>
-                        </ul>
-                    </nav>
+                                <li class="article-sidebar__item article-sidebar__item--nested">
+                                    <a href="#proyecto-2" class="article-sidebar__link">2. Aplicación del Clima</a>
+                                    <ul class="article-sidebar__sublist">
+                                        <li class="article-sidebar__item article-sidebar__item--bonus">
+                                            <span class="article-sidebar__icon">⚡</span>
+                                            <a href="#aprendizajes-weather" class="article-sidebar__link">Aprendizajes
+                                                Clave</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="article-sidebar__item article-sidebar__item--nested">
+                                    <a href="#proyecto-3" class="article-sidebar__link">3. Calculadora de Notas</a>
+                                    <ul class="article-sidebar__sublist">
+                                        <li class="article-sidebar__item article-sidebar__item--bonus">
+                                            <span class="article-sidebar__icon">⚡</span>
+                                            <a href="#funcionalidades-calc"
+                                                class="article-sidebar__link">Funcionalidades</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="article-sidebar__item">
+                                    <a href="#conclusiones" class="article-sidebar__link">Conclusiones</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </aside>
 
                 <div class="article-content">
@@ -298,7 +289,8 @@
                                     <img src="img/card/productos.PNG" alt="Tienda online vista productos"
                                         class="project__image">
                                     <img src="img/card/carrito.PNG" alt="Tienda online carrito" class="project__image">
-                                    <img src="img/card/responsive.PNG" alt="Tienda online responsive" class="project__image">
+                                    <img src="img/card/responsive.PNG" alt="Tienda online responsive"
+                                        class="project__image">
                                 </div>
 
                                 <p class="project__paragraph">
@@ -615,7 +607,7 @@
 
                             <!-- Views -->
                             <div class="article-summary__views">
-                                <i class="fa-solid fa-eye"></i>
+                                <i class="fa-solid fa-chart-bar"></i>
                                 <span>1.2K vistas</span>
                             </div>
                         </div>

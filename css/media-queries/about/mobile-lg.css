@@ -181,7 +181,6 @@
       font-size: 1.28rem;
    }
 
-   .ui__newsletter,
    .ui__write {
       display: none;
    }
@@ -436,14 +435,6 @@
       font-size: var(--font-size-md);
       min-height: 10rem;
       padding-top: 1rem;
-   }
-
-   /* =====================
-   MODAL DE NEWSLETTER
-   ===================== */
-
-   .modal__newsletter {
-      display: none;
    }
 
    /* =====================

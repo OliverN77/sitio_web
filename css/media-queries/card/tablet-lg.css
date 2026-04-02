@@ -181,7 +181,6 @@
         font-size: 1.28rem;
     }
 
-    .ui__newsletter,
     .ui__write {
         display: none;
     }
@@ -436,14 +435,6 @@
         font-size: var(--font-size-md);
         min-height: 10rem;
         padding-top: 1rem;
-    }
-
-    /* =====================
-   MODAL DE NEWSLETTER
-   ===================== */
-
-    .modal__newsletter {
-        display: none;
     }
 
     /* =====================
@@ -1057,8 +1048,9 @@
     }
 
     .tag:hover {
-        background-color: var(--bg-surface-dark);
-        color: var(--text-primary-dark);
+        border-color: #4e86ff;
+        color: #4e86ff;
+        transition: border-color 0.2s, color 0.2s;
     }
 
     .article-summary__views {
@@ -1106,11 +1098,11 @@
         justify-content: space-between;
         padding: 2rem 2.4rem;
         text-decoration: none;
-        transition: background-color 0.2s ease;
+        transition: border 0.2s ease;
     }
 
     .article-card:hover {
-        background-color: var(--bg-page-dark);
+        border: .1rem solid var(--text-muted-dark);
     }
 
     .article-card p {
@@ -1135,11 +1127,6 @@
     .article-card__link {
         color: var(--text-primary-dark);
         text-decoration: none;
-    }
-
-    .article-card__link:hover {
-        text-decoration: underline;
-        text-underline-offset: 0.3rem;
     }
 
     .article-card__excerpt {
@@ -1182,84 +1169,96 @@
     .profile__profile {
         background-color: var(--bg-surface-dark);
         border: .1rem solid var(--border-dark);
-        border-radius: var(--radius-lg);
+        border-radius: 1.8rem;
         display: flex;
         flex-direction: column;
-        gap: 1.6rem;
+        gap: 2rem;
+        min-height: 27rem;
+        overflow: hidden;
         padding: 2rem;
+        position: relative;
+        text-align: center;
+        transition: border-color 0.1s ease;
+    }
+
+    .profile__profile:hover {
+        border-color: var(--text-muted-dark);
     }
 
     .profile__header {
-        align-items: start;
+        align-items: center;
         display: flex;
-        gap: 1.6rem;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .profile__logo {
         align-items: center;
-        border: .1rem solid var(--border-dark);
+        background-color: var(--bg-page-dark);
         border-radius: 50%;
         color: var(--text-primary-dark);
         display: flex;
-        font-size: 2.4rem;
+        font-size: 2rem;
+        height: 4.8rem;
         justify-content: center;
-        min-height: 5.6rem;
-        min-width: 5.6rem;
+        width: 4.8rem;
     }
 
     .profile__content {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 60ch;
     }
 
     .profile__content h3 {
         color: var(--text-primary-dark);
-        font-size: var(--font-size-md);
+        font-size: 1.6rem;
+        margin: 0 0 0 4px;
     }
 
     .profile__content p {
-        color: var(--text-primary-dark);
+        color: var(--text-muted-dark);
         font-family: var(--font-family);
-        font-size: var(--font-size-lg);
-        line-height: 1.5;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        text-align: justify;
     }
 
     .profile__content span {
         color: var(--text-muted-dark);
-        font-size: var(--font-size-xs);
-        margin-top: 0.8rem;
+        font-size: 1.5rem;
+        margin-top: 0;
     }
 
     .card__links {
         align-items: center;
-        border-top: .1rem solid var(--border-dark);
         display: flex;
         flex-direction: row;
-        gap: 1.2rem;
-        justify-content: start;
-        padding: 1.6rem 0 0;
+        gap: 1.5rem;
+        justify-content: center;
+        padding: 0;
     }
 
     .card__links a {
         align-items: center;
-        border: .1rem solid var(--border-dark);
-        border-radius: 0.8rem;
         color: var(--text-muted-dark);
         display: flex;
-        font-size: var(--font-size-lg);
-        height: 3.6rem;
+        font-size: 1.5rem;
+        height: auto;
         justify-content: center;
+        opacity: 0.88;
         text-decoration: none;
-        transition: color 0.3s ease;
-        width: 3.6rem;
+        transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+        width: auto;
     }
 
     .card__links a:hover {
-        background-color: var(--bg-surface-dark);
         color: var(--text-primary-dark);
+        opacity: 1;
     }
-
 
     /* =====================
    FOOTER
