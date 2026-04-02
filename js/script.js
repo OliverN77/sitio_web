@@ -297,6 +297,8 @@ document.querySelectorAll('.code-block__copy').forEach(btn => {
     });
 });
 
+//Tabla de contenidos (TOC) - visible en móvil, tablet desktop, ocultado en desktop-xl (donde se muestra el sidebar fijo)
+
 function openToc() {
     articleSidebar.classList.add('active');
     tocOverlay.classList.add('active');
@@ -321,7 +323,7 @@ if (articleSidebar) {
     });
 }
 
-// Activate map ticks on scroll
+// Ticks para map y para links en sidebar (artículos)
 const sidebarSections = [...document.querySelectorAll('.article-sidebar__link')].map(link => link.getAttribute('href')?.substring(1)).filter(id => id);
 const mapTicks = document.querySelectorAll('.article-sidebar__map-tick');
 const sidebarLinks = document.querySelectorAll('.article-sidebar__link');

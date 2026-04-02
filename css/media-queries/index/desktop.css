@@ -611,86 +611,69 @@
 
     .profile__profile {
         background-color: var(--bg-surface-dark);
-        background-image: radial-gradient(circle at 50% -65%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 62%),
-            linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.2));
         border: .1rem solid var(--border-dark);
         border-radius: 1.8rem;
         display: flex;
         flex-direction: column;
-        gap: 2.2rem;
-        grid-column: 1 / -1;
-        min-height: 25.6rem;
+        gap: 2rem;
+        grid-column: 1 / 3;
+        min-height: 27rem;
         overflow: hidden;
-        padding: 3rem 2.2rem 2rem;
+        padding: 2rem;
         position: relative;
         text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .profile__profile::before {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 74%);
-        content: "";
-        height: 18rem;
-        left: 50%;
-        pointer-events: none;
-        position: absolute;
-        top: -13rem;
-        transform: translateX(-50%);
-        width: 18rem;
+        transition: border-color 0.1s ease;
     }
 
     .profile__profile:hover {
         border-color: var(--text-muted-dark);
-        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.22);
-        transform: translateY(-0.2rem);
     }
 
     .profile__header {
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
+        gap: 2rem;
     }
 
     .profile__logo {
         align-items: center;
-        background-color: var(--text-primary-dark);
+        background-color: var(--bg-page-dark);
         border-radius: 50%;
-        color: var(--bg-page-dark);
+        color: var(--text-primary-dark);
         display: flex;
-        font-size: 1.9rem;
-        height: 4.6rem;
+        font-size: 2rem;
+        height: 4.8rem;
         justify-content: center;
-        width: 4.6rem;
+        width: 4.8rem;
     }
 
     .profile__content {
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 0.9rem;
+        gap: 1rem;
         margin: 0 auto;
-        max-width: 56ch;
+        max-width: 62ch;
     }
 
     .profile__content h3 {
         color: var(--text-primary-dark);
-        font-size: 3rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        line-height: 1.08;
+        font-size: 1.6rem;
+        margin: 0 0 0 4px;
     }
 
     .profile__content p {
         color: var(--text-muted-dark);
         font-family: var(--font-family);
-        font-size: 1.55rem;
+        font-size: 1.4rem;
         line-height: 1.6;
+        text-align: justify;
     }
 
     .profile__content span {
         color: var(--text-muted-dark);
-        font-size: 1.45rem;
+        font-size: 1.5rem;
         margin-top: 0;
     }
 
@@ -698,7 +681,7 @@
         align-items: center;
         display: flex;
         flex-direction: row;
-        gap: 1.9rem;
+        gap: 1.5rem;
         justify-content: center;
         padding: 0;
     }
@@ -707,7 +690,7 @@
         align-items: center;
         color: var(--text-muted-dark);
         display: flex;
-        font-size: 2.1rem;
+        font-size: 1.5rem;
         height: auto;
         justify-content: center;
         opacity: 0.88;
@@ -719,7 +702,6 @@
     .card__links a:hover {
         color: var(--text-primary-dark);
         opacity: 1;
-        transform: translateY(-0.2rem);
     }
 
     /* =====================
