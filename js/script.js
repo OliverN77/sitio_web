@@ -1,10 +1,6 @@
 // Variables y referencias a elementos del DOM
 const articleSidebar = document.getElementById('articleSidebar');
 const header = document.querySelector('.header__header');
-const newsletterCloseBtn = document.querySelector('.modal__newsletter__close');
-const newsletterInput = document.querySelector('.modal__newsletter__input');
-const newsletterModal = document.getElementById('newsletterModal');
-const newsletterOpenBtn = document.querySelector('.ui__newsletter');
 const searchBody = document.querySelector('.modal__search__body');
 const searchCloseBtn = document.querySelector('.modal__search__close');
 const searchInput = document.querySelector('.modal__search__input');
@@ -26,6 +22,7 @@ let lastScroll = 0;
 
 // Sidebar
 
+// Funcion para abrir el sidebar
 function openSidebar() {
     sidebar.classList.add('active');
     sidebarOverlay.classList.add('active');
@@ -34,6 +31,7 @@ function openSidebar() {
     document.body.style.overflow = 'hidden';
 }
 
+// Funcion para cerrar el sidebar
 function closeSidebar() {
     sidebar.classList.remove('active');
     sidebarOverlay.classList.remove('active');
@@ -42,20 +40,24 @@ function closeSidebar() {
     document.body.style.overflow = '';
 }
 
+// Escuchar eventos de clic para abrir el sidebar
 if (sidebarToggle) {
     sidebarToggle.addEventListener('click', openSidebar);
 }
 
+// Escuchar eventos de clic para cerrar el sidebar
 if (sidebarClose) {
     sidebarClose.addEventListener('click', closeSidebar);
 }
 
+// Cerrar sidebar al hacer clic en el overlay (fuera del sidebar)
 if (sidebarOverlay) {
     sidebarOverlay.addEventListener('click', closeSidebar);
 }
 
 // Modal de Busqueda
 
+// Función para abrir modal de búsqueda
 function openSearchModal() {
     searchModal.classList.add('active');
     searchModal.setAttribute('aria-hidden', 'false');
@@ -63,6 +65,7 @@ function openSearchModal() {
     document.body.style.overflow = 'hidden';
 }
 
+// Función para cerrar modal de búsqueda
 function closeSearchModal() {
     searchModal.classList.remove('active');
     searchModal.setAttribute('aria-hidden', 'true');
@@ -71,6 +74,7 @@ function closeSearchModal() {
     if (searchBody) searchBody.innerHTML = '';
 }
 
+// Abrir modal con el botón de búsqueda en el header
 if (searchOpenBtn) {
     searchOpenBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -78,16 +82,19 @@ if (searchOpenBtn) {
     });
 }
 
+// Cerrar modal con el botón de cerrar
 if (searchCloseBtn) {
     searchCloseBtn.addEventListener('click', closeSearchModal);
 }
 
+//Evita que se cierre el modal al hacer click dentro del contenido
 if (searchModal) {
     searchModal.addEventListener('click', (e) => {
         if (e.target === searchModal) closeSearchModal();
     });
 }
 
+// Atajos de teclado
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (sidebar.classList.contains('active')) closeSidebar();
@@ -120,13 +127,13 @@ function generateAllCards() {
             date: dateEl?.textContent.trim() || '',
         };
     });
-    
+
     // Si se generaron tarjetas, guardar en localStorage
     if (cards.length > 0) {
         localStorage.setItem('allCards', JSON.stringify(cards));
         return cards;
     }
-    
+
     // Si no hay tarjetas en esta página, restaurar desde localStorage
     const saved = localStorage.getItem('allCards');
     return saved ? JSON.parse(saved) : [];
@@ -134,13 +141,16 @@ function generateAllCards() {
 
 allCards = generateAllCards();
 
+// Funcion para renderizar resultados de búsqueda
 function renderSearchResults(query) {
     searchBody.innerHTML = '';
     if (!query.trim()) return;
 
+    // Filtrar tarjetas que coincidan con la busqueda y se convierte a lowercase para hacer la búsqueda case-insensitive
     const q = query.toLowerCase();
     const matches = allCards.filter(card => card.title.toLowerCase().includes(q));
 
+    // Si no hay resultados, mostrar mensaje
     if (matches.length === 0) {
         const empty = document.createElement('p');
         empty.className = 'modal__search__empty';
@@ -149,11 +159,13 @@ function renderSearchResults(query) {
         return;
     }
 
+    // Mostrar resultados
     const label = document.createElement('span');
     label.className = 'modal__search__label';
     label.textContent = 'Search results';
     searchBody.appendChild(label);
 
+    // Crear un elemento para cada resultado
     matches.forEach(card => {
         const a = document.createElement('a');
         a.className = 'modal__search__result';
@@ -184,39 +196,12 @@ function renderSearchResults(query) {
     });
 }
 
+// Escuchar cambios en el input de búsqueda para actualizar resultados en tiempo real
 if (searchInput) {
     searchInput.addEventListener('input', () => renderSearchResults(searchInput.value));
 }
 
-// Modal flotante de newsletter
-
-function openNewsletterModal() {
-    newsletterModal.classList.add('active');
-    newsletterModal.setAttribute('aria-hidden', 'false');
-    setTimeout(() => newsletterInput && newsletterInput.focus(), 100);
-}
-
-
-if (newsletterOpenBtn) {
-    newsletterOpenBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openNewsletterModal();
-    });
-}
-
-// Cerrar modal de newsletter al hacer click fuera del diálogo
-if (newsletterModal) {
-    newsletterModal.addEventListener('click', (e) => {
-        // Si el click fue en el fondo (no en el cuadro)
-        if (e.target === newsletterModal) {
-            newsletterModal.classList.remove('active');
-            newsletterModal.setAttribute('aria-hidden', 'true');
-        }
-    });
-}
-
 // Ocualtar navbar con scroll
-
 window.addEventListener('scroll', () => {
     // Obtiene la posicion actual del scroll
     const currentScroll = window.pageYOffset;
@@ -228,17 +213,6 @@ window.addEventListener('scroll', () => {
         // Scroll hacia arriba, mostrar
         header.classList.remove('header--hide');
     }
-
-    if (newsletterModal) {
-        if (currentScroll > lastScroll) {
-            // Scroll hacia abajo -> establecer inset: 0
-            newsletterModal.style.setProperty('inset', '0');
-        } else {
-            // Scroll hacia arriba -> remover la propiedad inset
-            newsletterModal.style.removeProperty('inset');
-        }
-    }
-
     // Actualiza la ultima posicion del scroll
     lastScroll = currentScroll;
 });
@@ -251,6 +225,7 @@ function resolveTheme(theme) {
     return theme;
 }
 
+// Función para aplicar el tema seleccionado
 function applyTheme(theme) {
     const resolved = resolveTheme(theme);
     themeLink.href = `css/themes/${resolved}-theme.css`;
@@ -274,7 +249,7 @@ function applyTheme(theme) {
 // Cargar preferencia guardada
 applyTheme(localStorage.getItem('theme') || 'system');
 
-// Escuchar clics en el menú de tema
+// Escuchar clics en el menú de temas
 themeItems[0].addEventListener('click', () => applyTheme('light'));
 themeItems[1].addEventListener('click', () => applyTheme('dark'));
 themeItems[2].addEventListener('click', () => applyTheme('system'));
@@ -299,6 +274,7 @@ document.querySelectorAll('.code-block__copy').forEach(btn => {
 
 //Tabla de contenidos (TOC) - visible en móvil, tablet desktop, ocultado en desktop-xl (donde se muestra el sidebar fijo)
 
+// Función para abrir el TOC
 function openToc() {
     articleSidebar.classList.add('active');
     tocOverlay.classList.add('active');
@@ -306,6 +282,7 @@ function openToc() {
     document.body.style.overflow = 'hidden';
 }
 
+// Función para cerrar el TOC
 function closeToc() {
     articleSidebar.classList.remove('active');
     tocOverlay.classList.remove('active');
@@ -313,10 +290,12 @@ function closeToc() {
     document.body.style.overflow = '';
 }
 
+// Escuchar eventos de clic para abrir y cerrar el TOC
 if (tocToggle) tocToggle.addEventListener('click', openToc);
 if (tocClose) tocClose.addEventListener('click', closeToc);
 if (tocOverlay) tocOverlay.addEventListener('click', closeToc);
 
+// Cerrar TOC al hacer clic en cualquier enlace del sidebar
 if (articleSidebar) {
     articleSidebar.querySelectorAll('.article-sidebar__link').forEach(link => {
         link.addEventListener('click', closeToc);
