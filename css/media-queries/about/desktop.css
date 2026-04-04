@@ -464,7 +464,7 @@
         width: 100%;
     }
 
-    .about-page__container h1 {
+    .about-hero__title {
         color: var(--text-primary-dark);
         font-size: 4.8rem;
         font-weight: 700;
