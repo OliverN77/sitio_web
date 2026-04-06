@@ -287,7 +287,6 @@ function closeToc() {
     articleSidebar.classList.remove('active');
     tocOverlay.classList.remove('active');
     tocToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
 }
 
 // Escuchar eventos de clic para abrir y cerrar el TOC
@@ -322,4 +321,11 @@ const mapObserver = new IntersectionObserver(e => {
 sidebarSections.forEach(id => {
     const el = document.getElementById(id);
     if (el) mapObserver.observe(el);
+});
+
+//Redirigir a card.html si se le da click a todos los <article> con la clase .article-card
+document.querySelectorAll('article.article-card').forEach(card => {
+    card.addEventListener('click', () => {
+        window.location.href = 'card.html';
+    });
 });
