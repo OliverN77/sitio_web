@@ -45,15 +45,15 @@
     }
 
     .error-page__digit:nth-child(1) {
-        color: #2d2f32;
+        color: var(--border-dark);
     }
 
     .error-page__digit:nth-child(2) {
-        color: #2d2f32;
+        color: var(--border-dark);
     }
 
     .error-page__digit:nth-child(3) {
-        color: #2d2f32;
+        color: var(--border-dark);
     }
 
     .error-page__title {
@@ -105,18 +105,18 @@
 
     .hashnode__link a {
         align-items: center;
-        color: #414549;
+        color: var(--border-dark);
         display: flex;
         font-weight: 600;
         gap: 0.8rem;
         justify-content: center;
         text-decoration: none;
-        transition: color 0.2s;
+        transition: color 0.3s;
     }
 
     .hashnode__link a:hover {
         color: var(--text-muted-dark);
-        transition: color 0.2s;
+        transition: color 0.3s;
     }
 
     .hashnode__link i {
